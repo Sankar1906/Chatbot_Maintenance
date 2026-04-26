@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Machine Diagnostic</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #F5F7FA;
+  --surface: #FFFFFF;
+  --border:  #E4E9F0;
+  --blue:    #1A56DB;
+  --blue-lt: #EEF3FF;
+  --blue-dk: #1341B0;
+  --text:    #111827;
+  --muted:   #6B7280;
+  --green:   #059669;
+  --amber:   #D97706;
+  --red:     #DC2626;
+  --r:       14px;
+  --sh:      0 1px 8px rgba(0,0,0,0.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);height:100dvh;
+  display:flex;flex-direction:column;
+  overflow:hidden;color:var(--text);
+}
+
+/* ── TOP BAR ── */
+.topbar{
+  background:var(--surface);border-bottom:1px solid var(--border);
+  height:52px;padding:0 14px;
+  display:flex;align-items:center;gap:10px;flex-shrink:0;
+}
+.logo{font-size:14px;font-weight:600;color:var(--blue);white-space:nowrap}
+.search-wrap{flex:1;position:relative}
+.search-input{
+  width:100%;height:34px;padding:0 12px;
+  border:1.5px solid var(--border);border-radius:20px;
+  font-size:13px;font-family:inherit;outline:none;
+  background:var(--bg);transition:border-color .15s;
+}
+.search-input:focus{border-color:var(--blue)}
+.dropdown{
+  position:absolute;top:calc(100% + 5px);left:0;right:0;
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:10px;box-shadow:var(--sh);
+  max-height:180px;overflow-y:auto;display:none;z-index:100;
+}
+.dd-item{
+  padding:10px 13px;font-size:13px;cursor:pointer;
+  border-bottom:1px solid var(--border);transition:background .1s;
+}
+.dd-item:last-child{border-bottom:none}
+.dd-item:hover{background:var(--blue-lt)}
+.lang-sel{
+  height:32px;padding:0 10px;border-radius:16px;
+  border:1.5px solid var(--border);font-size:12px;
+  font-family:inherit;font-weight:500;cursor:pointer;
+  background:var(--surface);outline:none;white-space:nowrap;
+}
+
+/* ── TABS ── */
+.tabbar{
+  display:flex;background:var(--surface);
+  border-bottom:1px solid var(--border);flex-shrink:0;
+}
+.tab{
+  flex:1;padding:10px 0;font-size:13px;font-weight:500;
+  text-align:center;cursor:pointer;color:var(--muted);
+  border-bottom:2px solid transparent;transition:all .15s;
+  user-select:none;
+}
+.tab.active{color:var(--blue);border-bottom-color:var(--blue)}
+
+/* ── PANES ── */
+.pane{display:none;flex:1;flex-direction:column;overflow:hidden}
+.pane.show{display:flex}
+
+/* ── CHAT ── */
+.chat-scroll{
+  flex:1;overflow-y:auto;padding:16px;
+  display:flex;flex-direction:column;gap:10px;
+}
+.chat-scroll::-webkit-scrollbar{width:4px}
+.chat-scroll::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+
+.bot-bubble{
+  align-self:flex-start;max-width:82%;
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:4px var(--r) var(--r) var(--r);
+  padding:12px 14px;font-size:14px;line-height:1.55;
+  box-shadow:var(--sh);animation:up .18s ease;
+}
+.user-bubble{
+  align-self:flex-end;max-width:78%;
+  background:var(--blue);color:#fff;
+  border-radius:var(--r) 4px var(--r) var(--r);
+  padding:12px 14px;font-size:14px;line-height:1.55;
+  animation:up .18s ease;
+}
+@keyframes up{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+
+.thinking{display:inline-flex;gap:4px;align-items:center;padding:4px 0}
+.dot-anim{
+  width:7px;height:7px;border-radius:50%;background:var(--blue);
+  animation:bounce .8s ease-in-out infinite;
+}
+.dot-anim:nth-child(2){animation-delay:.15s}
+.dot-anim:nth-child(3){animation-delay:.3s}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+
+/* ── INPUT BAR ── */
+.input-bar{
+  background:var(--surface);border-top:1px solid var(--border);
+  padding:10px 12px;display:flex;gap:8px;align-items:flex-end;
+  flex-shrink:0;
+}
+.chat-textarea{
+  flex:1;padding:9px 13px;border:1.5px solid var(--border);
+  border-radius:20px;font-size:14px;font-family:inherit;
+  outline:none;resize:none;max-height:80px;line-height:1.4;
+  background:var(--bg);transition:border-color .15s;
+}
+.chat-textarea:focus{border-color:var(--blue)}
+.chat-textarea:disabled{opacity:.4}
+.btn-send{
+  width:38px;height:38px;border-radius:50%;border:none;
+  background:var(--blue);cursor:pointer;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .15s;
+}
+.btn-send:hover{background:var(--blue-dk)}
+.btn-send:disabled{opacity:.4;cursor:not-allowed}
+.btn-send svg{width:17px;height:17px;fill:#fff}
+.btn-exit{
+  height:36px;padding:0 13px;border-radius:18px;
+  border:1.5px solid var(--border);background:var(--surface);
+  font-size:13px;cursor:pointer;color:var(--muted);font-family:inherit;
+}
+
+/* ── VOICE TAB ── */
+.voice-pane-inner{
+  flex:1;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:28px 20px;gap:0;
+}
+.voice-orb{
+  width:110px;height:110px;border-radius:50%;
+  background:var(--blue-lt);border:2.5px solid var(--blue);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:all .2s;margin-bottom:18px;
+  font-size:36px;user-select:none;
+}
+.voice-orb:hover{transform:scale(1.04)}
+.voice-orb.idle{background:var(--blue-lt);border-color:var(--blue)}
+.voice-orb.loading{border-color:var(--amber);animation:spin 1.4s linear infinite}
+.voice-orb.listening{background:#ECFDF5;border-color:var(--green);animation:breathe 1s infinite alternate}
+.voice-orb.thinking{border-color:var(--amber);animation:spin 1.4s linear infinite}
+.voice-orb.speaking{border-color:var(--blue);animation:pulse-ring 1.5s infinite}
+.voice-orb.disabled{opacity:.4;cursor:not-allowed}
+
+@keyframes breathe{from{transform:scale(.97)}to{transform:scale(1.05)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse-ring{
+  0%{box-shadow:0 0 0 0 rgba(26,86,219,.28)}
+  100%{box-shadow:0 0 0 18px rgba(26,86,219,0)}
+}
+
+.voice-status-label{
+  font-size:15px;font-weight:500;color:var(--text);
+  margin-bottom:6px;text-align:center;
+}
+.voice-hint{
+  font-size:13px;color:var(--muted);text-align:center;
+  max-width:260px;line-height:1.5;
+}
+
+/* transcript box */
+.voice-history {
+  width:100%; max-width:380px; margin-top:22px;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--r); overflow-y:auto; overflow-x:hidden; /* Prevents horizontal scroll */
+  max-height:220px; padding:12px 14px; font-size:13px;
+  display:flex; flex-direction:column; gap:8px;
+}
+.v-bot { 
+  color: var(--text); font-weight: 400; line-height: 1.55; 
+  white-space: pre-wrap; word-break: break-word; /* Forces long words to wrap */
+  padding-bottom: 8px; border-bottom: 1px solid var(--border); 
+}
+.v-user { 
+  color: var(--blue); font-weight: 500; font-size: 13px; 
+  white-space: pre-wrap; word-break: break-word; /* Forces long words to wrap */
+  margin-top: 8px; 
+}
+.v-empty { color:var(--muted); font-size:12px; text-align:center; }
+
+
+/* hold button */
+.btn-hold{
+  margin-top:18px;padding:13px 32px;
+  border-radius:24px;border:none;
+  background:var(--blue);color:#fff;
+  font-size:14px;font-weight:500;cursor:pointer;
+  font-family:inherit;transition:background .15s;
+  user-select:none;touch-action:none;
+}
+.btn-hold:active,.btn-hold.held{background:#0B3DAB}
+.btn-hold:disabled{opacity:.4;cursor:not-allowed}
+
+/* ── SAFETY MODAL ── */
+/* ── SAFETY MODAL ── */
+.overlay{
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,.4);z-index:200;
+  align-items:center;justify-content:center;padding:18px;
+}
+.overlay.show{display:flex}
+.modal{
+  background:var(--surface);border-radius:16px;
+  padding:26px;max-width:420px;width:100%;
+  box-shadow:0 12px 40px rgba(0,0,0,.16);
+  animation:up .2s ease;
+  /* Prevent modal from becoming taller than the screen */
+  max-height:90vh;display:flex;flex-direction:column;
+}
+.modal-title{
+  font-size:16px;font-weight:600;color:var(--red);
+  margin-bottom:12px;flex-shrink:0;
+}
+.modal-list{
+  padding-left:17px;padding-right:5px;font-size:13px;
+  line-height:1.8;color:var(--text);
+  /* Scrollbar properties */
+  overflow-y:auto;max-height:300px;
+}
+/* Custom styling for the safety modal scrollbar */
+.modal-list::-webkit-scrollbar{width:4px}
+.modal-list::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+
+.btn-ack{
+  margin-top:18px;width:100%;padding:12px;
+  background:var(--blue);color:#fff;border:none;
+  border-radius:10px;font-size:14px;font-weight:600;
+  cursor:pointer;font-family:inherit;transition:background .15s;
+  flex-shrink:0;
+}
+.btn-ack:hover{background:var(--blue-dk)}
+
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo">⚙ Diagnostic</div>
+  <div class="search-wrap">
+    <input type="text" class="search-input" id="search" placeholder="Search subpart…">
+    <div class="dropdown" id="dropdown"></div>
+  </div>
+  <select class="lang-sel" id="lang">
+    <option value="en-IN">🇬🇧 EN</option>
+    <option value="hi-IN">🇮🇳 HI</option>
+    <option value="ta-IN">🇮🇳 TA</option>
+  </select>
+</div>
+
+<div class="tabbar">
+  <div class="tab active" id="tab-text" onclick="switchTab('text')">💬 Text Chat</div>
+  <div class="tab" id="tab-voice" onclick="switchTab('voice')">🎙 Voice Mode</div>
+</div>
+
+<!-- ── TEXT PANE ── -->
+<div class="pane show" id="pane-text">
+  <div class="chat-scroll" id="chat"></div>
+  <div class="input-bar">
+    <textarea class="chat-textarea" id="input" rows="1"
+              placeholder="Type your reply…" disabled
+              onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendText()}"></textarea>
+    <button class="btn-send" id="send-btn" onclick="sendText()" disabled>
+      <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+    </button>
+    <button class="btn-exit" onclick="location.href='/'">Exit</button>
+  </div>
+</div>
+
+
+<!-- ── VOICE PANE ── -->
+<div class="pane" id="pane-voice">
+  <div class="voice-pane-inner">
+    <div class="voice-orb disabled" id="orb" onclick="orbClick()">🎙</div>
+    <div class="voice-status-label" id="v-label">Select a subpart first</div>
+    <div class="voice-hint" id="v-hint">Switch to Text Chat, pick a subpart, then return here.</div>
+    
+    <div class="voice-history" id="v-history">
+      <div class="v-empty">Conversation will appear here</div>
+    </div>
+    
+    <button class="btn-hold" id="hold-btn" disabled
+            onmousedown="startRecord()" onmouseup="stopRecord()"
+            ontouchstart="startRecord(event)" ontouchend="stopRecord(event)">
+      Hold to Speak
+    </button>
+
+    <!-- NEW EXIT BUTTON -->
+    <button class="btn-exit" style="margin-top: 24px; width: 100%; max-width: 380px; padding: 12px; height: auto;" onclick="exitVoice()">
+      End Call & Exit
+    </button>
+
+  </div>
+</div>
+
+<!-- ── SAFETY MODAL ── -->
+<div class="overlay" id="safety-overlay">
+  <div class="modal">
+    <div class="modal-title">⚠ Safety Checklist</div>
+    <ul class="modal-list" id="safety-list"></ul>
+    <button class="btn-ack" onclick="acceptSafety()">I Acknowledge — Start Diagnosis</button>
+  </div>
+</div>
+
+<script>
+// ── State ─────────────────────────────────────────────────────────────────
+const params     = new URLSearchParams(location.search);
+const MACHINE_ID = params.get('machine_id');
+if (!MACHINE_ID) location.href = '/';
+
+let subpartsList   = [];
+let selectedSub    = null;
+let sessionToken   = null;
+let isWaiting      = false;
+let currentBotDiv  = null;
+let ws             = null;          // voice WebSocket
+let voiceReady     = false;
+
+// Audio queue for sentence-by-sentence playback
+let audioQueue  = [];
+let isPlaying   = false;
+
+// MediaRecorder for push-to-talk
+let recorder    = null;
+let audioChunks = [];
+
+// ── Tab switch ────────────────────────────────────────────────────────────
+function switchTab(tab) {
+  ['text','voice'].forEach(t => {
+    document.getElementById(`pane-${t}`).classList.toggle('show', t === tab);
+    document.getElementById(`tab-${t}`).classList.toggle('active', t === tab);
+  });
+  if (tab === 'voice' && selectedSub) {
+    if (!ws || ws.readyState === WebSocket.CLOSED) initVoiceWS();
+  }
+}
+
+// ── Subpart search ────────────────────────────────────────────────────────
+(async () => {
+  const res  = await fetch('/machines');
+  const data = await res.json();
+  data.lines.forEach(l => l.machines.forEach(m => {
+    if (m.machine_id === MACHINE_ID && m.subparts) subpartsList = m.subparts;
+  }));
+})();
+
+document.getElementById('search').addEventListener('input', function() {
+  const val = this.value.toLowerCase().trim();
+  const dd  = document.getElementById('dropdown');
+  dd.innerHTML = '';
+  if (!val) { dd.style.display = 'none'; return; }
+  const hits = subpartsList.filter(s => s.subpart_name.toLowerCase().includes(val));
+  if (hits.length) {
+    dd.style.display = 'block';
+    hits.forEach(s => {
+      const d = document.createElement('div');
+      d.className   = 'dd-item';
+      d.textContent = s.subpart_name;
+      d.onclick     = () => selectSubpart(s.subpart_id, s.subpart_name);
+      dd.appendChild(d);
+    });
+  } else { dd.style.display = 'none'; }
+});
+
+async function selectSubpart(id, name) {
+  document.getElementById('search').value   = name;
+  document.getElementById('dropdown').style.display = 'none';
+  document.getElementById('search').disabled = true;
+  document.getElementById('lang').disabled   = true;
+  selectedSub = id;
+
+  const res  = await fetch(`/machines/${MACHINE_ID}/subparts/${id}/safety`);
+  const data = await res.json();
+  const ul   = document.getElementById('safety-list');
+  ul.innerHTML = '';
+  data.items.forEach(item => {
+    const li = document.createElement('li'); li.textContent = item; ul.appendChild(li);
+  });
+  document.getElementById('safety-overlay').classList.add('show');
+}
+
+async function acceptSafety() {
+  document.getElementById('safety-overlay').classList.remove('show');
+  document.getElementById('chat').innerHTML = '';
+  await startTextSession();
+}
+
+// ── TEXT SESSION ──────────────────────────────────────────────────────────
+async function startTextSession() {
+  showThinking();
+  const fd = new FormData();
+  fd.append('token',      localStorage.getItem('auth_token') || '');
+  fd.append('machine_id', MACHINE_ID);
+  fd.append('subpart_id', selectedSub);
+  fd.append('lang',       document.getElementById('lang').value);
+
+  const res  = await fetch('/session/start', { method:'POST', body:fd });
+  const data = await res.json();
+  sessionToken = data.session_token;
+  removeThinking();
+
+  // Stream opening greeting
+  await streamAsk('__greeting__');
+  enableInput();
+}
+
+async function sendText() {
+  const el   = document.getElementById('input');
+  const text = el.value.trim();
+  if (!text || isWaiting || !sessionToken) return;
+  addUserBubble(text);
+  el.value = ''; el.style.height = 'auto';
+  disableInput();
+  showThinking();
+  await streamAsk(text);
+  enableInput();
+}
+
+async function streamAsk(query) {
+  const fd = new FormData();
+  fd.append('query', query);
+  fd.append('session_token', sessionToken);
+  const res = await fetch('/ask', { method:'POST', body:fd });
+  removeThinking();
+  if (!res.ok) { addBotBubble('Something went wrong. Please try again.'); return; }
+
+  startBotBubble();
+  const reader  = res.body.getReader();
+  const decoder = new TextDecoder();
+  let buf = '';
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    buf += decoder.decode(value, { stream:true });
+    const parts = buf.split('\n\n');
+    buf = parts.pop();
+    for (const part of parts) {
+      if (!part.startsWith('data: ')) continue;
+      try {
+        const obj = JSON.parse(part.slice(6));
+        if (obj.chunk) appendToBot(obj.chunk);
+      } catch {}
+    }
+  }
+  scrollBottom();
+}
+
+// ── Bubble helpers ────────────────────────────────────────────────────────
+function addUserBubble(text) {
+  const d = document.createElement('div');
+  d.className = 'user-bubble'; d.textContent = text;
+  document.getElementById('chat').appendChild(d);
+  scrollBottom();
+}
+function startBotBubble() {
+  currentBotDiv = document.createElement('div');
+  currentBotDiv.className = 'bot-bubble';
+  document.getElementById('chat').appendChild(currentBotDiv);
+  scrollBottom();
+}
+function appendToBot(chunk) {
+  if (!currentBotDiv) startBotBubble();
+  currentBotDiv.textContent += chunk;
+  scrollBottom();
+}
+function addBotBubble(text) {
+  const d = document.createElement('div');
+  d.className = 'bot-bubble'; d.textContent = text;
+  document.getElementById('chat').appendChild(d);
+  currentBotDiv = d; scrollBottom();
+}
+let thinkDiv = null;
+function showThinking() {
+  thinkDiv = document.createElement('div');
+  thinkDiv.className = 'bot-bubble';
+  thinkDiv.innerHTML = '<span class="thinking"><span class="dot-anim"></span><span class="dot-anim"></span><span class="dot-anim"></span></span>';
+  document.getElementById('chat').appendChild(thinkDiv); scrollBottom();
+}
+function removeThinking() { if (thinkDiv) { thinkDiv.remove(); thinkDiv = null; } }
+function scrollBottom() {
+  const c = document.getElementById('chat'); c.scrollTop = c.scrollHeight;
+}
+function enableInput() {
+  isWaiting = false;
+  document.getElementById('input').disabled    = false;
+  document.getElementById('send-btn').disabled = false;
+  document.getElementById('input').focus();
+}
+function disableInput() {
+  isWaiting = true;
+  document.getElementById('input').disabled    = true;
+  document.getElementById('send-btn').disabled = true;
+}
+document.getElementById('input').addEventListener('input', function() {
+  this.style.height = 'auto';
+  this.style.height = Math.min(this.scrollHeight, 80) + 'px';
+});
+
+// ── VOICE WebSocket ───────────────────────────────────────────────────────
+function initVoiceWS() {
+  const proto = location.protocol === 'https:' ? 'wss:' : 'ws:';
+  ws = new WebSocket(`${proto}//${location.host}/ws/voice-audio`);
+
+  ws.onopen = () => {
+    ws.send(JSON.stringify({
+      type:       'init',
+      machine_id: MACHINE_ID,
+      subpart_id: selectedSub,
+      lang:       document.getElementById('lang').value.slice(0, 2),
+    }));
+  };
+
+  ws.onmessage = (e) => {
+    const data = JSON.parse(e.data);
+
+    if (data.type === 'status') {
+      setOrbState(data.text);
+      // Enable hold button as soon as server says ready
+      if (data.text === 'ready') onVoiceReady();
+      // Re-enable hold after bot finishes speaking
+      if (data.text === 'done' && !isPlaying) enableHold();
+    }
+    else if (data.type === 'transcript') {
+      addVoiceEntry('user', data.text);
+    }
+    else if (data.type === 'text_chunk') {
+      appendVoiceBot(data.text);
+    }
+    else if (data.type === 'audio_chunk') {
+      enqueueAudio(data.audio);  // sentence-by-sentence audio queue
+    }
+    else if (data.type === 'done') {
+      currentVoiceBotDiv = null; // reset for next response
+      if (!isPlaying) { setOrbState('ready'); enableHold(); }
+    }
+    else if (data.type === 'escalate') {
+      addVoiceEntry('bot', '⚠ This requires a qualified engineer. Please escalate immediately.');
+    }
+    else if (data.type === 'error') {
+      addVoiceEntry('bot', data.text);
+      setOrbState('idle');
+      enableHold();
+    }
+  };
+
+  ws.onclose = () => {
+    voiceReady = false;
+    setOrbState('idle');
+    document.getElementById('v-label').textContent = 'Disconnected. Tap to reconnect.';
+  };
+
+  ws.onerror = () => {
+    document.getElementById('v-label').textContent = 'Connection error. Is voice server running?';
+    setOrbState('idle');
+  };
+}
+
+// ── Audio queue — plays MP3 chunks in order ───────────────────────────────
+let currentVoiceBotDiv = null;
+
+function enqueueAudio(base64mp3) {
+  audioQueue.push(base64mp3);
+  if (!isPlaying) playNextAudio();
+}
+
+function playNextAudio() {
+  if (audioQueue.length === 0) {
+    isPlaying = false;
+    setOrbState('idle');
+    enableHold();
+    return;
+  }
+  isPlaying = true;
+  setOrbState('speaking');
+  const b64   = audioQueue.shift();
+  const audio = new Audio('data:audio/mpeg;base64,' + b64);
+  audio.onended = playNextAudio;
+  audio.onerror = playNextAudio;
+  audio.play().catch(playNextAudio);
+}
+
+// ── Voice transcript display ──────────────────────────────────────────────
+function addVoiceEntry(role, text) {
+  const hist = document.getElementById('v-history');
+  const empty = hist.querySelector('.v-empty');
+  if (empty) empty.remove();
+
+  if (role === 'user') {
+    currentVoiceBotDiv = null;
+    const d = document.createElement('div');
+    d.className = 'v-user'; d.textContent = 'You: ' + text;
+    hist.appendChild(d);
+  } else {
+    const d = document.createElement('div');
+    d.className = 'v-bot';
+    hist.appendChild(d);
+    currentVoiceBotDiv = d;
+  }
+  hist.scrollTop = hist.scrollHeight;
+}
+
+function appendVoiceBot(chunk) {
+  if (!currentVoiceBotDiv) {
+    const hist = document.getElementById('v-history');
+    const empty = hist.querySelector('.v-empty');
+    if (empty) empty.remove();
+    currentVoiceBotDiv = document.createElement('div');
+    currentVoiceBotDiv.className = 'v-bot';
+    hist.appendChild(currentVoiceBotDiv);
+  }
+  currentVoiceBotDiv.textContent += chunk;
+  document.getElementById('v-history').scrollTop = document.getElementById('v-history').scrollHeight;
+}
+
+// ── Orb state ─────────────────────────────────────────────────────────────
+const ORB_CFG = {
+  idle:      { icon:'🎙', label:'Hold to speak',        hint:'Press and hold the button below to speak.' },
+  loading:   { icon:'⚙', label:'Loading knowledge…',   hint:'One moment — loading fault history and manual.' },
+  ready:     { icon:'🎙', label:'Ready',                 hint:'Press and hold the button to ask a question.' },
+  listening: { icon:'👂', label:'Listening…',            hint:'Speak now. Release the button when done.' },
+  thinking:  { icon:'⚙', label:'Thinking…',             hint:'Processing your question…' },
+  speaking:  { icon:'🔊', label:'Speaking…',             hint:'Listen to the response. Hold button when it stops to reply.' },
+};
+
+function setOrbState(state) {
+  const cfg = ORB_CFG[state] || ORB_CFG.idle;
+  const orb = document.getElementById('orb');
+  orb.className    = 'voice-orb ' + (voiceReady ? state : 'disabled');
+  orb.textContent  = cfg.icon;
+  document.getElementById('v-label').textContent = cfg.label;
+  document.getElementById('v-hint').textContent  = cfg.hint;
+  if (state === 'ready') voiceReady = true;
+}
+
+function orbClick() {
+  if (!selectedSub) {
+    switchTab('text');
+    alert('Please select a subpart first using the search bar.');
+    return;
+  }
+  if (!ws || ws.readyState !== WebSocket.OPEN) {
+    initVoiceWS();
+  }
+}
+
+// ── Push-to-talk recording ────────────────────────────────────────────────
+async function startRecord(e) {
+  if (e) e.preventDefault();
+  if (!voiceReady || !ws || ws.readyState !== WebSocket.OPEN) return;
+
+  // Stop any playing audio
+  audioQueue = [];
+  isPlaying  = false;
+
+  audioChunks = [];
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    recorder = new MediaRecorder(stream, { mimeType: 'audio/webm' });
+    recorder.ondataavailable = e => { if (e.data.size > 0) audioChunks.push(e.data); };
+    recorder.onstop = async () => {
+      stream.getTracks().forEach(t => t.stop());
+      const blob  = new Blob(audioChunks, { type: 'audio/webm' });
+      const bytes = await blob.arrayBuffer();
+      if (ws && ws.readyState === WebSocket.OPEN) {
+        ws.send(bytes);
+        currentVoiceBotDiv = null;
+        setOrbState('thinking');
+        disableHold();
+      }
+    };
+    recorder.start();
+    setOrbState('listening');
+    document.getElementById('hold-btn').classList.add('held');
+  } catch (err) {
+    alert('Microphone permission denied. Please allow mic access.');
+  }
+}
+
+function stopRecord(e) {
+  if (e) e.preventDefault();
+  document.getElementById('hold-btn').classList.remove('held');
+  if (recorder && recorder.state === 'recording') {
+    recorder.stop();
+  }
+}
+
+function enableHold() {
+  document.getElementById('hold-btn').disabled = false;
+}
+function disableHold() {
+  document.getElementById('hold-btn').disabled = true;
+}
+
+// ── Voice ready — called from onmessage when status=ready ────────────────
+function onVoiceReady() {
+  voiceReady = true;
+  setOrbState('ready');
+  enableHold();
+  console.log('[VOICE] Ready — hold button enabled.');
+}
+</script>
+</body>
+</html>

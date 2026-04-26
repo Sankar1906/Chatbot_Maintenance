@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #121212; color: #e0e0e0; margin: 0; display: flex; }
+        .sidebar { width: 250px; background: #1e1e1e; height: 100vh; padding: 20px; box-sizing: border-box; }
+        .sidebar h2 { color: #bb86fc; }
+        .menu-item { padding: 15px; margin: 10px 0; background: #2c2c2c; border-radius: 5px; cursor: pointer; text-align: center; font-weight: bold; }
+        .menu-item:hover { background: #383838; }
+        .active { background: #bb86fc; color: black; }
+        .content { flex: 1; padding: 40px; overflow-y: auto; height: 100vh; box-sizing: border-box; }
+        .panel { display: none; background: #1e1e1e; padding: 30px; border-radius: 10px; border: 1px solid #333; }
+        .panel h3 { margin-top: 0; color: #bb86fc; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        select, input[type="text"], input[type="password"], input[type="file"], button { width: 100%; padding: 12px; margin-top: 15px; background: #2c2c2c; color: white; border: 1px solid #444; border-radius: 5px; box-sizing: border-box; }
+        button { background: #03dac6; color: black; cursor: pointer; font-weight: bold; margin-top: 15px; }
+        button:hover { background: #018786; color: white; }
+        .btn-danger { background: #cf6679; color: white; margin-top: 5px; padding: 5px; width: auto; font-size: 12px; }
+        .alert { padding: 15px; background: #03dac6; color: black; border-radius: 5px; margin-bottom: 20px; display: none; }
+        .alert.error { background: #cf6679; color: white; }
+        .creation-box { background: #2c2c2c; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        .tree-view { background: #121212; padding: 20px; border-radius: 5px; margin-top: 20px; }
+        .tree-item { margin-bottom: 10px; padding: 10px; background: #1e1e1e; border-left: 3px solid #bb86fc; }
+        .tree-sub { margin-left: 30px; padding: 5px; border-left: 2px solid #03dac6; background: #222; margin-top: 5px; }
+
+        /* ── Admin Login Overlay ── */
+        #login-overlay {
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,0.85);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 9999;
+        }
+        #login-overlay.hidden { display: none; }
+        .login-box {
+            background: #1e1e1e;
+            border: 1px solid #bb86fc;
+            border-radius: 12px;
+            padding: 40px;
+            width: 360px;
+            box-shadow: 0 0 40px rgba(187,134,252,0.2);
+        }
+        .login-box h2 { color: #bb86fc; margin: 0 0 8px; }
+        .login-box p  { color: #888; font-size: 13px; margin: 0 0 24px; }
+        .login-box input { display: block; margin-top: 12px; }
+        .login-box button { margin-top: 20px; }
+        #login-error {
+            margin-top: 12px; padding: 10px; background: #cf6679;
+            color: white; border-radius: 5px; font-size: 13px; display: none;
+        }
+        .badge {
+            display: inline-block; background: #2c2c2c;
+            border: 1px solid #444; border-radius: 4px;
+            padding: 3px 8px; font-size: 11px; color: #888; margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ══ ADMIN LOGIN OVERLAY ══════════════════════════════════════════ -->
+<div id="login-overlay">
+    <div class="login-box">
+        <h2>⚙️ Admin Login</h2>
+        <p>This area is restricted to administrators only.</p>
+        <input type="text"     id="admin-user-id"  placeholder="Admin user ID"  value="admin">
+        <input type="password" id="admin-password"  placeholder="Password"       value="">
+        <button onclick="adminLogin()">Login as Admin</button>
+        <div id="login-error"></div>
+        <div class="badge">Default: admin / admin123</div>
+    </div>
+</div>
+
+<!-- ══ MAIN ADMIN UI ════════════════════════════════════════════════ -->
+<div class="sidebar">
+    <h2>⚙️ Admin Panel</h2>
+    <div id="admin-name-badge" style="font-size:12px;color:#888;margin-bottom:10px;"></div>
+    <div class="menu-item active" onclick="showPanel('dir-panel', this)">Manage Directory</div>
+    <div class="menu-item" onclick="showPanel('upload-panel', this)">Upload Files</div>
+    <div class="menu-item" onclick="adminLogout()" style="background:#cf6679;color:white;">Logout</div>
+</div>
+
+<div class="content">
+    <div id="alert-box" class="alert"></div>
+
+    <!-- DIRECTORY MANAGEMENT PANEL -->
+    <div id="dir-panel" class="panel" style="display:block;">
+        <h3>Manage Factory Architecture</h3>
+        <div class="creation-box">
+            <h4>1. Create New Line</h4>
+            <input type="text" id="new-line-name" placeholder="e.g., Main Production Floor">
+            <button onclick="createEntity('line')">Create Line</button>
+        </div>
+        <div class="creation-box">
+            <h4>2. Create New Machine</h4>
+            <select id="sel-line-for-machine"><option value="">-- Select Line --</option></select>
+            <input type="text" id="new-machine-name" placeholder="e.g., Sonnen Punching Machine">
+            <button onclick="createEntity('machine')">Create Machine</button>
+        </div>
+        <div class="creation-box">
+            <h4>3. Create New Subpart</h4>
+            <select id="sel-machine-for-subpart"><option value="">-- Select Machine --</option></select>
+            <input type="text" id="new-subpart-name" placeholder="e.g., Hydraulic Pump Unit">
+            <button onclick="createEntity('subpart')">Create Subpart</button>
+        </div>
+        <hr style="border:0;border-top:1px solid #444;margin:30px 0;">
+        <h3>Current Directory</h3>
+        <div class="tree-view" id="directory-tree">Loading...</div>
+    </div>
+
+    <!-- UPLOAD PANEL -->
+    <div id="upload-panel" class="panel">
+        <h3>Upload Maintenance Data &amp; Manuals</h3>
+        <label>1. Select Machine:</label>
+        <select id="machine-select" onchange="updateSubparts()"><option value="">-- Loading --</option></select>
+        <label>2. Select Subpart:</label>
+        <select id="subpart-select"><option value="">-- Select Machine First --</option></select>
+        <label>3. Upload Maintenance History (.xlsx):</label>
+        <input type="file" id="excel-file" accept=".xlsx,.XLSX">
+        <button onclick="uploadFile('excel')">Upload Excel &amp; Analyze Frequency</button>
+        <hr style="border:0;border-top:1px solid #333;margin:30px 0;">
+        <label>4. Upload Technical Manual (PDF):</label>
+        <input type="file" id="pdf-file" accept=".pdf">
+        <button onclick="uploadFile('manual')">Upload PDF &amp; Index Pages</button>
+    </div>
+</div>
+
+<script>
+    let registryData = null;
+
+    // ── Token stored separately from operator token ──────────────────
+    let adminToken = localStorage.getItem('admin_auth_token');
+
+    // ── On load: validate existing token, else show login ────────────
+    async function init() {
+        if (adminToken) {
+            // Verify the token is still valid by pinging a protected endpoint
+            const fd = new FormData();
+            fd.append("token", adminToken);
+            fd.append("type", "line");
+            fd.append("name", "__ping__");
+            // Use /machines (public) just to check connectivity, then trust cached token
+            // Actually do a lightweight check: try to list machines
+            try {
+                const res = await fetch('/machines');
+                if (res.ok) {
+                    showApp();
+                    return;
+                }
+            } catch(e) {}
+        }
+        // No valid token — show login
+        document.getElementById('login-overlay').classList.remove('hidden');
+    }
+
+    function showApp() {
+        document.getElementById('login-overlay').classList.add('hidden');
+        const name = localStorage.getItem('admin_name') || 'Admin';
+        document.getElementById('admin-name-badge').innerText = `Logged in as ${name}`;
+        loadDirectory();
+    }
+
+    async function adminLogin() {
+        const userId   = document.getElementById('admin-user-id').value.trim();
+        const password = document.getElementById('admin-password').value;
+        const errBox   = document.getElementById('login-error');
+        errBox.style.display = 'none';
+
+        if (!userId || !password) {
+            errBox.innerText = 'Enter user ID and password.';
+            errBox.style.display = 'block';
+            return;
+        }
+
+        const fd = new FormData();
+        fd.append('user_id', userId);
+        fd.append('password', password);
+
+        try {
+            const res  = await fetch('/auth/login', { method: 'POST', body: fd });
+            const data = await res.json();
+
+            if (!res.ok) {
+                errBox.innerText = 'Invalid credentials. Try again.';
+                errBox.style.display = 'block';
+                return;
+            }
+
+            if (data.role !== 'admin') {
+                errBox.innerText = `User "${userId}" has role "${data.role}". Admin role required.`;
+                errBox.style.display = 'block';
+                return;
+            }
+
+            // ✅ Successful admin login
+            adminToken = data.token;
+            localStorage.setItem('admin_auth_token', adminToken);
+            localStorage.setItem('admin_name', data.name);
+            showApp();
+
+        } catch(e) {
+            errBox.innerText = 'Cannot reach server. Is it running?';
+            errBox.style.display = 'block';
+        }
+    }
+
+    async function adminLogout() {
+        if (adminToken) {
+            const fd = new FormData();
+            fd.append('token', adminToken);
+            await fetch('/auth/logout', { method: 'POST', body: fd }).catch(() => {});
+        }
+        localStorage.removeItem('admin_auth_token');
+        localStorage.removeItem('admin_name');
+        adminToken = null;
+        window.location.href = '/';
+    }
+
+    // Allow Enter key on password field
+    document.getElementById('admin-password').addEventListener('keydown', e => {
+        if (e.key === 'Enter') adminLogin();
+    });
+
+    // ── UI helpers ───────────────────────────────────────────────────
+    function showPanel(id, element) {
+        document.querySelectorAll('.panel').forEach(p => p.style.display = 'none');
+        document.querySelectorAll('.menu-item').forEach(m => m.classList.remove('active'));
+        document.getElementById(id).style.display = 'block';
+        element.classList.add('active');
+        if (id === 'dir-panel') loadDirectory();
+    }
+
+    function showAlert(msg, isError = false) {
+        const box = document.getElementById('alert-box');
+        box.innerText = msg;
+        box.className = 'alert' + (isError ? ' error' : '');
+        box.style.display = 'block';
+        setTimeout(() => box.style.display = 'none', 6000);
+    }
+
+    // ── Directory CRUD ────────────────────────────────────────────────
+    async function createEntity(type) {
+        const fd = new FormData();
+        fd.append('token', adminToken);
+        fd.append('type', type);
+
+        if (type === 'line') {
+            const name = document.getElementById('new-line-name').value;
+            if (!name) return alert('Enter line name');
+            fd.append('name', name);
+        } else if (type === 'machine') {
+            const name   = document.getElementById('new-machine-name').value;
+            const parent = document.getElementById('sel-line-for-machine').value;
+            if (!name || !parent) return alert('Select line and enter machine name');
+            fd.append('name', name);
+            fd.append('parent_id', parent);
+        } else if (type === 'subpart') {
+            const name   = document.getElementById('new-subpart-name').value;
+            const parent = document.getElementById('sel-machine-for-subpart').value;
+            if (!name || !parent) return alert('Select machine and enter subpart name');
+            fd.append('name', name);
+            fd.append('parent_id', parent);
+        }
+
+        const res  = await fetch('/admin/create', { method: 'POST', body: fd });
+        const data = await res.json();
+        if (res.ok) {
+            showAlert(data.message);
+            document.getElementById('new-line-name').value    = '';
+            document.getElementById('new-machine-name').value = '';
+            document.getElementById('new-subpart-name').value = '';
+            loadDirectory();
+        } else {
+            handleAuthError(res.status, data.detail);
+        }
+    }
+
+    async function deleteEntity(type, id) {
+        if (!confirm(`Delete this ${type}? This cannot be undone.`)) return;
+        const fd = new FormData();
+        fd.append('token', adminToken);
+        fd.append('type', type);
+        fd.append('item_id', id);
+        const res = await fetch('/admin/delete', { method: 'POST', body: fd });
+        if (res.ok) { showAlert(`Deleted ${type} successfully.`); loadDirectory(); }
+        else { const d = await res.json(); handleAuthError(res.status, d.detail); }
+    }
+
+    async function loadDirectory() {
+        const res = await fetch('/machines');
+        registryData = await res.json();
+
+        const lineSel      = document.getElementById('sel-line-for-machine');
+        const machSel      = document.getElementById('sel-machine-for-subpart');
+        const uploadMachSel = document.getElementById('machine-select');
+
+        lineSel.innerHTML       = '<option value="">-- Select Line --</option>';
+        machSel.innerHTML       = '<option value="">-- Select Machine --</option>';
+        uploadMachSel.innerHTML = '<option value="">-- Select Machine --</option>';
+
+        let treeHTML = '';
+        registryData.lines.forEach(line => {
+            lineSel.innerHTML += `<option value="${line.line_id}">${line.line_name}</option>`;
+            treeHTML += `<div class="tree-item">
+                <strong>📍 ${line.line_name}</strong>
+                <button class="btn-danger" onclick="deleteEntity('line','${line.line_id}')">Delete Line</button>`;
+            line.machines.forEach(m => {
+                machSel.innerHTML       += `<option value="${m.machine_id}">${m.machine_name}</option>`;
+                uploadMachSel.innerHTML += `<option value="${m.machine_id}">${m.machine_name} (${line.line_name})</option>`;
+                treeHTML += `<div class="tree-sub">
+                    <strong>⚙️ ${m.machine_name}</strong>
+                    <button class="btn-danger" onclick="deleteEntity('machine','${m.machine_id}')">Delete Machine</button>`;
+                (m.subparts || []).forEach(s => {
+                    treeHTML += `<div class="tree-sub" style="border-left:2px solid #cf6679;">
+                        🧩 ${s.subpart_name}
+                        <button class="btn-danger" onclick="deleteEntity('subpart','${s.subpart_id}')">Delete</button>
+                    </div>`;
+                });
+                treeHTML += '</div>';
+            });
+            treeHTML += '</div>';
+        });
+        document.getElementById('directory-tree').innerHTML = treeHTML || 'No data yet. Create a Line to begin.';
+    }
+
+    // ── Upload ────────────────────────────────────────────────────────
+    function updateSubparts() {
+        const m_id   = document.getElementById('machine-select').value;
+        const sSelect = document.getElementById('subpart-select');
+        sSelect.innerHTML = '';
+        registryData.lines.forEach(line => {
+            line.machines.forEach(m => {
+                if (m.machine_id === m_id) {
+                    (m.subparts || []).forEach(s => {
+                        sSelect.innerHTML += `<option value="${s.subpart_id}">${s.subpart_name}</option>`;
+                    });
+                }
+            });
+        });
+    }
+
+    async function uploadFile(type) {
+        const m_id = document.getElementById('machine-select').value;
+        const s_id = document.getElementById('subpart-select').value;
+        if (!m_id || !s_id) { alert('Select Machine and Subpart first.'); return; }
+
+        const fileInput = type === 'excel'
+            ? document.getElementById('excel-file')
+            : document.getElementById('pdf-file');
+        if (!fileInput.files[0]) { alert('Please select a file.'); return; }
+
+        const fd = new FormData();
+        fd.append('token',      adminToken);   // ← always the admin token
+        fd.append('machine_id', m_id);
+        fd.append('subpart_id', s_id);
+        fd.append('file',       fileInput.files[0]);
+
+        const endpoint = type === 'excel' ? '/admin/upload_excel' : '/admin/upload_manual';
+        showAlert(`Uploading ${type === 'excel' ? 'Excel' : 'PDF'}... processing in background.`);
+
+        const res  = await fetch(endpoint, { method: 'POST', body: fd });
+        const data = await res.json();
+
+        if (res.ok) {
+            showAlert('✅ ' + data.message);
+            fileInput.value = '';
+        } else {
+            handleAuthError(res.status, data.detail);
+        }
+    }
+
+    // ── Auth error handler ────────────────────────────────────────────
+    function handleAuthError(status, detail) {
+        if (status === 401 || status === 403) {
+            showAlert(`Session expired or not admin. Please log in again.`, true);
+            localStorage.removeItem('admin_auth_token');
+            adminToken = null;
+            setTimeout(() => {
+                document.getElementById('login-overlay').classList.remove('hidden');
+            }, 1500);
+        } else {
+            showAlert('Error: ' + detail, true);
+        }
+    }
+
+    // ── Boot ──────────────────────────────────────────────────────────
+    init();
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnostic Platform - Entry</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f7f6; margin: 0; padding: 20px; text-align: center; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
+        .card { padding: 20px; background: #e3f2fd; border-radius: 8px; cursor: pointer; transition: 0.3s; border: 1px solid #90caf9; font-weight: bold; color: #1565c0; }
+        .card:hover { background: #1976d2; color: white; }
+        #login-section { margin-bottom: 30px; }
+        input, button { padding: 10px; margin: 5px; border-radius: 5px; border: 1px solid #ccc; }
+        button { background: #1565c0; color: white; cursor: pointer; border: none; font-weight: bold; }
+        button:hover { background: #0d47a1; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 AI Diagnostic System</h1>
+        
+        <!-- Login Form -->
+        <div id="login-section">
+            <h3>Operator Login</h3>
+            <input type="text" id="user_id" placeholder="Operator ID (e.g., op001)" value="op001">
+            <input type="password" id="password" placeholder="Password" value="op001">
+            <button onclick="login()">Login</button>
+            <br><a href="/admin.html" style="font-size: 12px; color: #666; margin-top:10px; display:inline-block;">Admin Login</a>
+        </div>
+
+        <!-- Machine Tiles (Hidden until login) -->
+        <div id="machine-section" style="display: none;">
+            <h3>Select a Machine to Begin</h3>
+            <div class="grid" id="machine-grid"></div>
+        </div>
+    </div>
+
+    <script>
+        async function login() {
+            const formData = new FormData();
+            formData.append("user_id", document.getElementById('user_id').value);
+            formData.append("password", document.getElementById('password').value);
+
+            const res = await fetch('/auth/login', { method: 'POST', body: formData });
+            if (res.ok) {
+                const data = await res.json();
+                localStorage.setItem('auth_token', data.token);
+                document.getElementById('login-section').style.display = 'none';
+                document.getElementById('machine-section').style.display = 'block';
+                loadMachines();
+            } else {
+                alert("Login failed. Check credentials.");
+            }
+        }
+
+        async function loadMachines() {
+            const res = await fetch('/machines');
+            const data = await res.json();
+            const grid = document.getElementById('machine-grid');
+            grid.innerHTML = '';
+            
+            data.lines.forEach(line => {
+                line.machines.forEach(m => {
+                    let div = document.createElement('div');
+                    div.className = 'card';
+                    div.innerText = m.machine_name;
+                    // Navigate to the main page without preloading data
+                    div.onclick = () => window.location.href = `/machine.html?machine_id=${m.machine_id}`;
+                    grid.appendChild(div);
+                });
+            });
+        }
+    </script>
+</body>
+</html>
