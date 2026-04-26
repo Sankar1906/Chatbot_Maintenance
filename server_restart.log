@@ -22,7 +22,7 @@ Traceback (most recent call last):
 OSError: [WinError 64] The specified network name is no longer available
 [RETRIEVER] Index built: 290 faults | FlashText + BM25Okapi ready
 
-[PREWARM] Warming 8 machines in parallel…
+[PREWARM] Warming 8 machines in parallelâ€¦
 
 [INIT] Initialising session: machine=lineA_m1, user=admin
   [OK] User: Admin | lang: en-IN
@@ -30,8 +30,8 @@ OSError: [WinError 64] The specified network name is no longer available
   [OK] History: 12 past tickets
   [CACHE MISS] Calling Ollama for greeting...
   [OK] Greeting cached for future sessions
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
-  [PREWARM] lineA_m1 — done
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
+  [PREWARM] lineA_m1 â€” done
 
 [INIT] Initialising session: machine=lineA_m2, user=admin
   [OK] User: Admin | lang: en-IN
@@ -39,8 +39,8 @@ OSError: [WinError 64] The specified network name is no longer available
   [OK] History: 2 past tickets
   [CACHE MISS] Calling Ollama for greeting...
   [OK] Greeting cached for future sessions
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
-  [PREWARM] lineA_m2 — done
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
+  [PREWARM] lineA_m2 â€” done
 
 [INIT] Initialising session: machine=lineA_m3, user=admin
   [OK] User: Admin | lang: en-IN
@@ -48,8 +48,8 @@ OSError: [WinError 64] The specified network name is no longer available
   [OK] History: 2 past tickets
   [CACHE MISS] Calling Ollama for greeting...
   [OK] Greeting cached for future sessions
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
-  [PREWARM] lineA_m3 — done
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
+  [PREWARM] lineA_m3 â€” done
 
 [INIT] Initialising session: machine=lineA_m4, user=admin
   [OK] User: Admin | lang: en-IN
@@ -57,8 +57,8 @@ OSError: [WinError 64] The specified network name is no longer available
   [OK] History: 0 past tickets
   [CACHE MISS] Calling Ollama for greeting...
   [OK] Greeting cached for future sessions
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
-  [PREWARM] lineA_m4 — done
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
+  [PREWARM] lineA_m4 â€” done
 
 [INIT] Initialising session: machine=lineA_m5, user=admin
   [OK] User: Admin | lang: en-IN
@@ -66,8 +66,8 @@ OSError: [WinError 64] The specified network name is no longer available
   [OK] History: 0 past tickets
   [CACHE MISS] Calling Ollama for greeting...
   [OK] Greeting cached for future sessions
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
-  [PREWARM] lineA_m5 — done
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
+  [PREWARM] lineA_m5 â€” done
 
 [INIT] Initialising session: machine=lineB_m1, user=admin
   [OK] User: Admin | lang: en-IN
@@ -75,8 +75,8 @@ OSError: [WinError 64] The specified network name is no longer available
   [OK] History: 0 past tickets
   [CACHE MISS] Calling Ollama for greeting...
   [OK] Greeting cached for future sessions
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
-  [PREWARM] lineB_m1 — done
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
+  [PREWARM] lineB_m1 â€” done
 
 [INIT] Initialising session: machine=lineB_m2, user=admin
   [OK] User: Admin | lang: en-IN
@@ -84,8 +84,8 @@ OSError: [WinError 64] The specified network name is no longer available
   [OK] History: 0 past tickets
   [CACHE MISS] Calling Ollama for greeting...
   [OK] Greeting cached for future sessions
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
-  [PREWARM] lineB_m2 — done
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
+  [PREWARM] lineB_m2 â€” done
 
 [INIT] Initialising session: machine=lineB_m3, user=admin
   [OK] User: Admin | lang: en-IN
@@ -93,8 +93,8 @@ OSError: [WinError 64] The specified network name is no longer available
   [OK] History: 0 past tickets
   [CACHE MISS] Calling Ollama for greeting...
   [OK] Greeting cached for future sessions
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
-  [PREWARM] lineB_m3 — done
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
+  [PREWARM] lineB_m3 â€” done
 [PREWARM] All machines ready. Session starts are now instant.
 
 INFO:     127.0.0.1:1204 - "GET /health HTTP/1.1" 200 OK
