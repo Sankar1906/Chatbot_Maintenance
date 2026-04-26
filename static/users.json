@@ -1,0 +1,38 @@
+{
+  "op001": {
+    "user_id": "op001",
+    "name": "Operator 1",
+    "password": "a0af937e43dc20554bb5dc3f15f89c02a665e987cc113d48f7dc34c49639206f",
+    "role": "operator",
+    "lang": "en-IN",
+    "shift": "day",
+    "phone": ""
+  },
+  "op002": {
+    "user_id": "op002",
+    "name": "Operator 2",
+    "password": "20b63b86465963e6f158b1470cddbb3044314017cee98997e1808c35ccb3c21a",
+    "role": "operator",
+    "lang": "ta-IN",
+    "shift": "day",
+    "phone": ""
+  },
+  "op003": {
+    "user_id": "op003",
+    "name": "Operator 3",
+    "password": "beda2864366bece0a5c4864288a6ab589d8497fdedf3e23fd7ced7769234b524",
+    "role": "operator",
+    "lang": "hi-IN",
+    "shift": "night",
+    "phone": ""
+  },
+  "admin": {
+    "user_id": "admin",
+    "name": "Admin",
+    "password": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+    "role": "admin",
+    "lang": "en-IN",
+    "shift": "day",
+    "phone": ""
+  }
+}

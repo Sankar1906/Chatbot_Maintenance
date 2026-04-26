@@ -1,0 +1,100 @@
+INFO:     Started server process [33576]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+Task exception was never retrieved
+future: <Task finished name='Task-15' coro=<IocpProactor.accept.<locals>.accept_coro() done, defined at C:\Users\DELL\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py:605> exception=OSError(22, 'The specified network name is no longer available', None, 64, None)>
+Traceback (most recent call last):
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 608, in accept_coro
+    await future
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 854, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 597, in finish_accept
+    ov.getresult()
+OSError: [WinError 64] The specified network name is no longer available
+Accept failed on a socket
+socket: <asyncio.TransportSocket fd=580, family=2, type=1, proto=6, laddr=('0.0.0.0', 8000)>
+Traceback (most recent call last):
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 843, in loop
+    conn, addr = f.result()
+                 ^^^^^^^^^^
+OSError: [WinError 64] The specified network name is no longer available
+[RETRIEVER] Index built: 290 faults | FlashText + BM25Okapi ready
+
+[PREWARM] Warming 8 machines in parallel…
+
+[INIT] Initialising session: machine=lineA_m1, user=admin
+  [OK] User: Admin | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 12 past tickets
+  [CACHE MISS] Calling Ollama for greeting...
+  [OK] Greeting cached for future sessions
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [PREWARM] lineA_m1 — done
+
+[INIT] Initialising session: machine=lineA_m2, user=admin
+  [OK] User: Admin | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 2 past tickets
+  [CACHE MISS] Calling Ollama for greeting...
+  [OK] Greeting cached for future sessions
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [PREWARM] lineA_m2 — done
+
+[INIT] Initialising session: machine=lineA_m3, user=admin
+  [OK] User: Admin | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 2 past tickets
+  [CACHE MISS] Calling Ollama for greeting...
+  [OK] Greeting cached for future sessions
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [PREWARM] lineA_m3 — done
+
+[INIT] Initialising session: machine=lineA_m4, user=admin
+  [OK] User: Admin | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 0 past tickets
+  [CACHE MISS] Calling Ollama for greeting...
+  [OK] Greeting cached for future sessions
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [PREWARM] lineA_m4 — done
+
+[INIT] Initialising session: machine=lineA_m5, user=admin
+  [OK] User: Admin | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 0 past tickets
+  [CACHE MISS] Calling Ollama for greeting...
+  [OK] Greeting cached for future sessions
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [PREWARM] lineA_m5 — done
+
+[INIT] Initialising session: machine=lineB_m1, user=admin
+  [OK] User: Admin | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 0 past tickets
+  [CACHE MISS] Calling Ollama for greeting...
+  [OK] Greeting cached for future sessions
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [PREWARM] lineB_m1 — done
+
+[INIT] Initialising session: machine=lineB_m2, user=admin
+  [OK] User: Admin | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 0 past tickets
+  [CACHE MISS] Calling Ollama for greeting...
+  [OK] Greeting cached for future sessions
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [PREWARM] lineB_m2 — done
+
+[INIT] Initialising session: machine=lineB_m3, user=admin
+  [OK] User: Admin | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 0 past tickets
+  [CACHE MISS] Calling Ollama for greeting...
+  [OK] Greeting cached for future sessions
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [PREWARM] lineB_m3 — done
+[PREWARM] All machines ready. Session starts are now instant.
+
+INFO:     127.0.0.1:1204 - "GET /health HTTP/1.1" 200 OK

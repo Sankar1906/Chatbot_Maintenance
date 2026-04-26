@@ -1,0 +1,903 @@
+INFO:     Started server process [32928]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[RETRIEVER] Index built: 290 faults | FlashText + BM25Okapi ready
+
+[PREWARM] Warming 8 machines in parallel…
+
+[INIT] Initialising session: machine=lineA_m1, user=admin
+  [OK] User: Admin | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 12 past tickets
+  [CACHE HIT] Greeting served instantly
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [PREWARM] lineA_m1 — done
+
+[INIT] Initialising session: machine=lineA_m2, user=admin
+  [OK] User: Admin | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 2 past tickets
+  [CACHE HIT] Greeting served instantly
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [PREWARM] lineA_m2 — done
+
+[INIT] Initialising session: machine=lineA_m3, user=admin
+  [OK] User: Admin | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 2 past tickets
+  [CACHE HIT] Greeting served instantly
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [PREWARM] lineA_m3 — done
+
+[INIT] Initialising session: machine=lineA_m4, user=admin
+  [OK] User: Admin | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 0 past tickets
+  [CACHE HIT] Greeting served instantly
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [PREWARM] lineA_m4 — done
+
+[INIT] Initialising session: machine=lineA_m5, user=admin
+  [OK] User: Admin | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 0 past tickets
+  [CACHE HIT] Greeting served instantly
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [PREWARM] lineA_m5 — done
+
+[INIT] Initialising session: machine=lineB_m1, user=admin
+  [OK] User: Admin | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 0 past tickets
+  [CACHE HIT] Greeting served instantly
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [PREWARM] lineB_m1 — done
+
+[INIT] Initialising session: machine=lineB_m2, user=admin
+  [OK] User: Admin | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 0 past tickets
+  [CACHE HIT] Greeting served instantly
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [PREWARM] lineB_m2 — done
+
+[INIT] Initialising session: machine=lineB_m3, user=admin
+  [OK] User: Admin | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 0 past tickets
+  [CACHE HIT] Greeting served instantly
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [PREWARM] lineB_m3 — done
+[PREWARM] All machines ready. Session starts are now instant.
+
+INFO:     127.0.0.1:11331 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10506 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10514 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10465 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10320 - "POST /auth/login HTTP/1.1" 200 OK
+
+[INIT] Initialising session: machine=lineA_m5, user=op001
+  [OK] User: Operator 1 | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 0 past tickets
+  [CACHE HIT] Greeting served instantly
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+INFO:     127.0.0.1:10322 - "POST /session/start HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 1 | injected: ['F617 — DC link overvoltage', 'F025 — SSI interrupt', 'F026 — SCI interrupt', 'F027 — HOST interrupt', 'F003 — NMI due to watchdog. Suppl. info: \\%X'] | tokens ~5377
+INFO:     127.0.0.1:4691 - "POST /ask HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 2 | injected: ['F617 — DC link overvoltage', 'F616 — DC link undervoltage', 'F149 — Incorrect data for modulo axis with absolute encoder.', 'F875 — Axial deviations in fixed voltage', 'F504 — Measuring circuit error, motor measuring system'] | tokens ~5615
+INFO:     127.0.0.1:2294 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7638 - "GET /health HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 3 | injected: ['F617 — DC link overvoltage', 'F616 — DC link undervoltage', 'F875 — Axial deviations in fixed voltage', 'F504 — Measuring circuit error, motor measuring system', 'F149 — Incorrect data for modulo axis with absolute encoder.'] | tokens ~5671
+INFO:     127.0.0.1:9721 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9718 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9718 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9718 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9718 - "GET /sw.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:9718 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3945 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3945 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9718 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9718 - "GET /sw.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:9718 - "POST /auth/logout HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10622 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10622 - "GET /machines HTTP/1.1" 200 OK
+
+[INIT] Initialising session: machine=lineA_m2, user=op001
+  [OK] User: Operator 1 | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 2 past tickets
+  [CACHE HIT] Greeting served instantly
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+INFO:     127.0.0.1:10622 - "POST /session/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10622 - "GET /health HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 1 | injected: ['F682 — Illegal encoder code number in P\\%u', 'F681 — Illegal power section code number', 'F680 — Illegal motor code number', 'F037 — Error when initializing the user data. Supplementary', 'F039 — Error during power section identification. Supplementary info: \\%X'] | tokens ~5602
+INFO:     127.0.0.1:9552 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6182 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6182 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5673 - "GET /health HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 2 | injected: ['F037 — Error when initializing the user data. Supplementary', 'F680 — Illegal motor code number', 'F682 — Illegal encoder code number in P\\%u', 'F681 — Illegal power section code number', 'F039 — Error during power section identification. Supplementary info: \\%X'] | tokens ~5640
+INFO:     127.0.0.1:3800 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3722 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3722 - "GET /health HTTP/1.1" 200 OK
+  [OK] Ticket saved: lineA_m2 | Closed by operator
+[OK] Session 1776674684 closed and context cleared.
+INFO:     127.0.0.1:12383 - "POST /session/close HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12383 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12383 - "GET /health HTTP/1.1" 200 OK
+
+[INIT] Initialising session: machine=lineA_m1, user=op001
+  [OK] User: Operator 1 | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 12 past tickets
+  [CACHE HIT] Greeting served instantly
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+INFO:     127.0.0.1:12383 - "POST /session/start HTTP/1.1" 200 OK
+  [OK] Ticket saved: lineA_m1 | Closed by operator
+[OK] Session 1776674777 closed and context cleared.
+INFO:     127.0.0.1:5379 - "POST /session/close HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5379 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5379 - "POST /auth/logout HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5379 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2502 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5041 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14117 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8695 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10461 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10691 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11731 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2345 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4820 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12919 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8811 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14572 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5522 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14977 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13869 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10934 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14695 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5583 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6992 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5224 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7444 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2205 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9533 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7175 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9749 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9749 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9749 - "GET /machines HTTP/1.1" 200 OK
+
+[INIT] Initialising session: machine=lineA_m1, user=op001
+  [OK] User: Operator 1 | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 14 past tickets
+  [CACHE HIT] Greeting served instantly
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+INFO:     127.0.0.1:9749 - "POST /session/start HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 1 | injected: ['F682 — Illegal encoder code number in P\\%u', 'F680 — Illegal motor code number', 'F681 — Illegal power section code number', 'F037 — Error when initializing the user data. Supplementary', 'F750 — Speed monitoring BERO incorrectly configured'] | tokens ~5753
+INFO:     127.0.0.1:5742 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5947 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5947 - "GET /health HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 2 | injected: ['F682 — Illegal encoder code number in P\\%u', 'F680 — Illegal motor code number', 'F681 — Illegal power section code number', 'F037 — Error when initializing the user data. Supplementary', 'F039 — Error during power section identification. Supplementary info: \\%X'] | tokens ~5795
+INFO:     127.0.0.1:5947 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1941 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8963 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7813 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4370 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13511 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14913 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7939 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1242 - "GET /health HTTP/1.1" 200 OK
+  [OK] Ticket saved: lineA_m1 | Closed by operator
+[OK] Session 1776676070 closed and context cleared.
+INFO:     127.0.0.1:1242 - "POST /session/close HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1242 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1242 - "GET /health HTTP/1.1" 200 OK
+
+[INIT] Initialising session: machine=lineA_m1, user=op001
+  [OK] User: Operator 1 | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 16 past tickets
+  [CACHE HIT] Greeting served instantly
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+INFO:     127.0.0.1:1242 - "POST /session/start HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 1 | injected: ['F608 — Speed controller output limited', 'F037 — Error when initializing the user data. Supplementary', 'F824 — Function generator faulted \\%d', 'F682 — Illegal encoder code number in P\\%u', 'F031 — Internal data error. Suppl. info: \\%X'] | tokens ~5763
+INFO:     127.0.0.1:9772 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3605 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3605 - "GET /health HTTP/1.1" 200 OK
+  [OK] Ticket saved: lineA_m1 | Closed by operator
+[OK] Session 1776676264 closed and context cleared.
+INFO:     127.0.0.1:3605 - "POST /session/close HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3605 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3605 - "POST /auth/logout HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11986 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3844 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9649 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9649 - "GET /machines HTTP/1.1" 200 OK
+
+[INIT] Initialising session: machine=lineA_m1, user=op001
+  [OK] User: Operator 1 | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 18 past tickets
+  [CACHE HIT] Greeting served instantly
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+INFO:     127.0.0.1:9649 - "POST /session/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9649 - "GET /health HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 1 | injected: ['F037 — Error when initializing the user data. Supplementary', 'F824 — Function generator faulted \\%d', 'F773 — Not permissible to active analog input', 'F865 — Invalid signal number', 'F682 — Illegal encoder code number in P\\%u'] | tokens ~5692
+INFO:     127.0.0.1:7537 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9555 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7306 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10068 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5054 - "GET /health HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 2 | injected: ['F037 — Error when initializing the user data. Supplementary', 'F035 — Error when saving the user data. Supplementary info:', 'F004 — Stack overflow. Suppl. info: \\%X', 'F039 — Error during power section identification. Supplementary info: \\%X', 'F003 — NMI due to watchdog. Suppl. info: \\%X'] | tokens ~5838
+INFO:     127.0.0.1:5054 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5054 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7202 - "GET /health HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 3 | injected: ['F037 — Error when initializing the user data. Supplementary', 'F039 — Error during power section identification. Supplementary info: \\%X', 'F035 — Error when saving the user data. Supplementary info:', 'F004 — Stack overflow. Suppl. info: \\%X', 'F007 — Error when initializing. Supplementary info: \\%X'] | tokens ~5965
+INFO:     127.0.0.1:7202 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6982 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10468 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8122 - "GET /health HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 4 | injected: ['F037 — Error when initializing the user data. Supplementary', 'F035 — Error when saving the user data. Supplementary info:', 'F004 — Stack overflow. Suppl. info: \\%X', 'F007 — Error when initializing. Supplementary info: \\%X', 'F039 — Error during power section identification. Supplementary info: \\%X'] | tokens ~6072
+INFO:     127.0.0.1:4054 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14985 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14985 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11802 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1104 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6099 - "GET /health HTTP/1.1" 200 OK
+  [OK] Ticket saved: lineA_m1 | Closed by operator
+[OK] Session 1776676332 closed and context cleared.
+INFO:     127.0.0.1:8488 - "POST /session/close HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8488 - "GET /machines HTTP/1.1" 200 OK
+
+[INIT] Initialising session: machine=lineA_m1, user=op001
+  [OK] User: Operator 1 | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 20 past tickets
+  [CACHE HIT] Greeting served instantly
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+INFO:     127.0.0.1:8488 - "POST /session/start HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 1 | injected: ['F680 — Illegal motor code number', 'F731 — Invalid rated output', 'F732 — Invalid rated speed', 'F729 — Invalid motor stall current', 'F780 — No-load current, motor > rated motor current (motor'] | tokens ~5740
+INFO:     127.0.0.1:8488 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11846 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11846 - "GET /health HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 2 | injected: ['F680 — Illegal motor code number', 'F504 — Measuring circuit error, motor measuring system', 'F048 — Illegal status PROFIBUS hardware', 'F511 — Ground fault detected', 'F780 — No-load current, motor > rated motor current (motor'] | tokens ~5797
+INFO:     127.0.0.1:1621 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13127 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13127 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13160 - "GET /health HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 3 | injected: ['F504 — Measuring circuit error, motor measuring system', 'F680 — Illegal motor code number', 'F789 — Setpoint transfer SimoCom U ==> drive interrupted', 'F608 — Speed controller output limited', 'F505 — Meas. circ. error motor meas. syst. abs. track'] | tokens ~5979
+INFO:     127.0.0.1:13160 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14048 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7005 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1692 - "GET /health HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 4 | injected: ['F504 — Measuring circuit error, motor measuring system', 'F789 — Setpoint transfer SimoCom U ==> drive interrupted', 'F680 — Illegal motor code number', 'F048 — Illegal status PROFIBUS hardware', 'F608 — Speed controller output limited'] | tokens ~5965
+INFO:     127.0.0.1:3624 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5560 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12999 - "GET /health HTTP/1.1" 200 OK
+  [OK] Ticket saved: lineA_m1 | Closed by operator
+[OK] Session 1776676556 closed and context cleared.
+INFO:     127.0.0.1:12999 - "POST /session/close HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12999 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14336 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13737 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1077 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2863 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13144 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10635 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13725 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1879 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14643 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7374 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6897 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12791 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10477 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7361 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5473 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2524 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11409 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7566 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8444 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10482 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12170 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11917 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14054 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2347 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1871 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1871 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6700 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8685 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5014 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5467 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10988 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3153 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7776 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2518 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9725 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12544 - "GET /health HTTP/1.1" 200 OK
+
+[INIT] Initialising session: machine=lineA_m1, user=op001
+  [OK] User: Operator 1 | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 20 past tickets
+  [CACHE HIT] Greeting served instantly
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+INFO:     127.0.0.1:11100 - "POST /session/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7786 - "GET /health HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 1 | injected: ['F682 — Illegal encoder code number in P\\%u', 'F680 — Illegal motor code number', 'F681 — Illegal power section code number', 'F037 — Error when initializing the user data. Supplementary', 'F750 — Speed monitoring BERO incorrectly configured'] | tokens ~5760
+INFO:     127.0.0.1:2258 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10353 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2258 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14576 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9025 - "GET /sw.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:3735 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9181 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2258 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3735 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10353 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10353 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9025 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9025 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10353 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10353 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3735 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9025 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3735 - "POST /auth/logout HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9025 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9025 - "GET /sw.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:9025 - "GET /sw.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:10353 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3735 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3735 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3735 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3735 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3735 - "GET /health HTTP/1.1" 200 OK
+
+[INIT] Initialising session: machine=lineA_m1, user=op001
+  [OK] User: Operator 1 | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 20 past tickets
+  [CACHE HIT] Greeting served instantly
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+INFO:     127.0.0.1:3735 - "POST /session/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11976 - "GET /health HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 1 | injected: ['F037 — Error when initializing the user data. Supplementary', 'F824 — Function generator faulted \\%d', 'F773 — Not permissible to active analog input', 'F865 — Invalid signal number', 'F682 — Illegal encoder code number in P\\%u'] | tokens ~5695
+INFO:     127.0.0.1:6997 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5829 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3555 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3121 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4337 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6997 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3569 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13186 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2958 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4114 - "GET /health HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 2 | injected: ['F037 — Error when initializing the user data. Supplementary', 'F035 — Error when saving the user data. Supplementary info:', 'F007 — Error when initializing. Supplementary info: \\%X', 'F036 — Error when downloading the firmware. Suppl. info: \\%X', 'F004 — Stack overflow. Suppl. info: \\%X'] | tokens ~5971
+INFO:     127.0.0.1:7233 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8212 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12452 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7233 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8212 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4760 - "GET /health HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 3 | injected: ['F037 — Error when initializing the user data. Supplementary', 'F035 — Error when saving the user data. Supplementary info:', 'F007 — Error when initializing. Supplementary info: \\%X', 'F036 — Error when downloading the firmware. Suppl. info: \\%X', 'F004 — Stack overflow. Suppl. info: \\%X'] | tokens ~6016
+INFO:     127.0.0.1:3976 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12572 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5410 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2899 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10908 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3976 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13839 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1457 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6451 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2266 - "GET /health HTTP/1.1" 200 OK
+  [OK] Ticket saved: lineA_m1 | Closed by operator
+[OK] Session 1776677832 closed and context cleared.
+INFO:     127.0.0.1:6589 - "POST /session/close HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6589 - "GET /machines HTTP/1.1" 200 OK
+
+[INIT] Initialising session: machine=lineB_m1, user=op001
+  [OK] User: Operator 1 | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 0 past tickets
+  [CACHE HIT] Greeting served instantly
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+INFO:     127.0.0.1:14426 - "POST /session/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14426 - "GET /health HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 1 | injected: ['F682 — Illegal encoder code number in P\\%u', 'F680 — Illegal motor code number', 'F037 — Error when initializing the user data. Supplementary', 'F681 — Illegal power section code number', 'F511 — Ground fault detected'] | tokens ~5549
+INFO:     127.0.0.1:9592 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9592 - "POST /auth/logout HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2155 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10070 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8728 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7323 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3805 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2155 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10070 - "GET /sw.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:9592 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3805 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5772 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5772 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13920 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10652 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1805 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1500 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6823 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6823 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6823 - "GET /sw.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:3340 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3340 - "GET /machines HTTP/1.1" 200 OK
+
+[INIT] Initialising session: machine=lineA_m1, user=op001
+  [OK] User: Operator 1 | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 20 past tickets
+  [CACHE HIT] Greeting served instantly
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+INFO:     127.0.0.1:12631 - "POST /session/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12631 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3338 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2558 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3938 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3072 - "GET /health HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 1 | injected: ['F039 — Error during power section identification. Supplementary info: \\%X', 'F681 — Illegal power section code number', 'F745 — New EnDat encoder', 'F037 — Error when initializing the user data. Supplementary', 'F004 — Stack overflow. Suppl. info: \\%X'] | tokens ~5717
+INFO:     127.0.0.1:1346 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11116 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1346 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12295 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5474 - "GET /health HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 2 | injected: ['F039 — Error during power section identification. Supplementary info: \\%X', 'F037 — Error when initializing the user data. Supplementary', 'F034 — Axis count function has failed', 'F004 — Stack overflow. Suppl. info: \\%X', 'F781 — No-load current, motor \\%d > rated power section current'] | tokens ~5854
+INFO:     127.0.0.1:5474 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10317 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1617 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9249 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1679 - "GET /health HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 3 | injected: ['F039 — Error during power section identification. Supplementary info: \\%X', 'F815 — Power module temperature, pre-alarm', 'F037 — Error when initializing the user data. Supplementary', 'F034 — Axis count function has failed', 'F004 — Stack overflow. Suppl. info: \\%X'] | tokens ~5964
+INFO:     127.0.0.1:1679 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2658 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4435 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11760 - "GET /health HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 4 | injected: ['F039 — Error during power section identification. Supplementary info: \\%X', 'F034 — Axis count function has failed', 'F815 — Power module temperature, pre-alarm', 'F028 — Actual current sensing during power-up', 'F515 — Power module temperature, exceeded'] | tokens ~6065
+INFO:     127.0.0.1:11760 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2220 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14348 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2887 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13753 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6156 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12147 - "GET /health HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 5 | injected: ['F815 — Power module temperature, pre-alarm', 'F039 — Error during power section identification. Supplementary info: \\%X', 'F034 — Axis count function has failed', 'F028 — Actual current sensing during power-up', 'F515 — Power module temperature, exceeded'] | tokens ~6155
+  [OK] Ticket saved: lineA_m1 | Resolved by operator
+[OK] Session 1776678513 closed and context cleared.
+INFO:     127.0.0.1:12147 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7951 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4350 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8858 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8482 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11806 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14962 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8599 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1357 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9855 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1196 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8689 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9463 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12640 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6306 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2928 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3850 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8513 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4229 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1104 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6984 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2346 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4328 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7554 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9873 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4612 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1050 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3749 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7876 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7876 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13553 - "GET /sw.js HTTP/1.1" 304 Not Modified
+
+[INIT] Initialising session: machine=lineA_m1, user=op001
+  [OK] User: Operator 1 | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 20 past tickets
+  [CACHE HIT] Greeting served instantly
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+INFO:     127.0.0.1:13553 - "POST /session/start HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 1 | injected: ['F682 — Illegal encoder code number in P\\%u', 'F680 — Illegal motor code number', 'F681 — Illegal power section code number', 'F037 — Error when initializing the user data. Supplementary', 'F750 — Speed monitoring BERO incorrectly configured'] | tokens ~5761
+INFO:     127.0.0.1:7404 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7182 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7404 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4736 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5904 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8822 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5418 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6379 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10367 - "GET /health HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 2 | injected: ['F682 — Illegal encoder code number in P\\%u', 'F681 — Illegal power section code number', 'F680 — Illegal motor code number', 'F037 — Error when initializing the user data. Supplementary', 'F039 — Error during power section identification. Supplementary info: \\%X'] | tokens ~5805
+INFO:     127.0.0.1:9239 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5934 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9239 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3447 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10889 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3395 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10889 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13446 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13203 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1578 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3341 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7577 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12886 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11319 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7324 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10367 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12126 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5007 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6571 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1285 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9652 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3246 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11722 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9660 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13563 - "GET /health HTTP/1.1" 200 OK
+  [OK] Ticket saved: lineA_m1 | Closed by operator
+[OK] Session 1776679902 closed and context cleared.
+INFO:     127.0.0.1:13563 - "POST /session/close HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13563 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9627 - "GET /health HTTP/1.1" 200 OK
+
+[INIT] Initialising session: machine=lineA_m1, user=op001
+  [OK] User: Operator 1 | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 20 past tickets
+  [CACHE HIT] Greeting served instantly
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+INFO:     127.0.0.1:9627 - "POST /session/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1656 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8544 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3550 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9798 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3419 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11355 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11355 - "GET /health HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 1 | injected: ['F037 — Error when initializing the user data. Supplementary', 'F824 — Function generator faulted \\%d', 'F773 — Not permissible to active analog input', 'F865 — Invalid signal number', 'F682 — Illegal encoder code number in P\\%u'] | tokens ~5694
+INFO:     127.0.0.1:14416 - "POST /ask HTTP/1.1" 200 OK
+  [OK] Ticket saved: lineA_m1 | Closed by operator
+[OK] Session 1776681010 closed and context cleared.
+INFO:     127.0.0.1:3134 - "POST /session/close HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11119 - "POST /session/close HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8827 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10593 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3134 - "POST /session/close HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12922 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3134 - "POST /session/close HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3134 - "POST /session/close HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3134 - "POST /session/close HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3134 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3134 - "POST /auth/logout HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4875 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3134 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4875 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3134 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3134 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3134 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14041 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9078 - "GET /sw.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:3922 - "GET /health HTTP/1.1" 200 OK
+
+[INIT] Initialising session: machine=lineA_m1, user=op001
+  [OK] User: Operator 1 | lang: en-IN
+  [OK] Knowledge: 290 faults | ~4449 tokens
+  [OK] History: 20 past tickets
+  [CACHE HIT] Greeting served instantly
+  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+INFO:     127.0.0.1:3922 - "POST /session/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2293 - "GET /health HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 1 | injected: ['F611 — Illegal motion during rotor position identification', 'F682 — Illegal encoder code number in P\\%u', 'F680 — Illegal motor code number', 'F681 — Illegal power section code number', 'F037 — Error when initializing the user data. Supplementary'] | tokens ~5795
+INFO:     127.0.0.1:2293 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10591 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1549 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2293 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1549 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8368 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4913 - "GET /health HTTP/1.1" 200 OK
+  [RETRIEVER] Turn 2 | injected: ['F611 — Illegal motion during rotor position identification', 'F780 — No-load current, motor > rated motor current (motor', 'F680 — Illegal motor code number', 'F682 — Illegal encoder code number in P\\%u', 'F781 — No-load current, motor \\%d > rated power section current'] | tokens ~5875
+INFO:     127.0.0.1:4913 - "POST /ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7972 - "GET /machines HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1708 - "GET /sw.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:4913 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12188 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10222 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2733 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1708 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14720 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11863 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12894 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5068 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4946 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1968 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3528 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8827 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4928 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2996 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11020 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2236 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13047 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1514 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1492 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10672 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9519 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3913 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5735 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1177 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13250 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9238 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3523 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11876 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3837 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6479 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9249 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3267 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10123 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9426 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5767 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3660 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10496 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8879 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10385 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9540 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13661 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3879 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6791 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10057 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2335 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10149 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2817 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4679 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13412 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3270 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9608 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4560 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13243 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8563 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8368 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10035 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3832 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1749 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11379 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2908 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5264 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3675 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12668 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7731 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8741 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4311 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1358 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11012 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8753 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3067 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8876 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6291 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1977 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3937 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14456 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3223 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3078 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3717 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14440 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14375 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5297 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12397 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9124 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9867 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7043 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10114 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10082 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9295 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13308 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3056 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10281 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5375 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6595 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11579 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8352 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2027 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5998 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10704 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2079 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14603 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9500 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5822 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1383 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9304 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9393 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11636 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14138 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5632 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4061 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7463 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3442 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9815 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12113 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2098 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12620 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3326 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6476 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6476 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2447 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4341 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1601 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10526 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12171 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7744 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9411 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1117 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6246 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2312 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6989 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1590 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1374 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9878 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11040 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6058 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11558 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7906 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2909 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3259 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8993 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10656 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10380 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5296 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4798 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12046 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2018 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13985 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1378 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7532 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2951 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14224 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4522 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7273 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2404 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11762 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9896 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4020 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12499 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6640 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11875 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9102 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3935 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3750 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1397 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10278 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12462 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3128 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3677 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5443 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13016 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14145 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2293 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8789 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2584 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8004 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7879 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6696 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8634 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14947 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14419 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3005 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5181 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5594 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10723 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2798 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9404 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12809 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9928 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9150 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6268 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10335 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13808 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11309 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4266 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3726 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1776 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9271 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9394 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11676 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1286 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13120 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11643 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1288 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2337 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7446 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5672 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14369 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9822 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12774 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4463 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1160 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8124 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4087 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7027 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12064 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13389 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6771 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5267 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4809 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12749 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1041 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1335 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13342 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13342 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11141 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1837 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1837 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8328 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4771 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13301 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8127 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5518 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1643 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7131 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2258 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9804 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9136 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5615 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2224 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12886 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4497 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12199 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2881 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6191 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10310 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4012 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1938 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3839 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13858 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10157 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6793 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5394 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1385 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9084 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13347 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6021 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2153 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3430 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5597 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4145 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5218 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6574 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14218 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4572 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7179 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14599 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12500 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9101 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11724 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12345 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1622 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11315 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11303 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8785 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14267 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10792 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6186 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9256 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6851 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3006 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6336 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4211 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13576 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12694 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10294 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8741 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6872 - "GET /health HTTP/1.1" 200 OK
