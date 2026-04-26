@@ -4,71 +4,71 @@ INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 [RETRIEVER] Index built: 290 faults | FlashText + BM25Okapi ready
 
-[PREWARM] Warming 8 machines in parallel…
+[PREWARM] Warming 8 machines in parallelâ€¦
 
 [INIT] Initialising session: machine=lineA_m1, user=admin
   [OK] User: Admin | lang: en-IN
   [OK] Knowledge: 290 faults | ~4449 tokens
   [OK] History: 12 past tickets
   [CACHE HIT] Greeting served instantly
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
-  [PREWARM] lineA_m1 — done
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
+  [PREWARM] lineA_m1 â€” done
 
 [INIT] Initialising session: machine=lineA_m2, user=admin
   [OK] User: Admin | lang: en-IN
   [OK] Knowledge: 290 faults | ~4449 tokens
   [OK] History: 2 past tickets
   [CACHE HIT] Greeting served instantly
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
-  [PREWARM] lineA_m2 — done
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
+  [PREWARM] lineA_m2 â€” done
 
 [INIT] Initialising session: machine=lineA_m3, user=admin
   [OK] User: Admin | lang: en-IN
   [OK] Knowledge: 290 faults | ~4449 tokens
   [OK] History: 2 past tickets
   [CACHE HIT] Greeting served instantly
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
-  [PREWARM] lineA_m3 — done
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
+  [PREWARM] lineA_m3 â€” done
 
 [INIT] Initialising session: machine=lineA_m4, user=admin
   [OK] User: Admin | lang: en-IN
   [OK] Knowledge: 290 faults | ~4449 tokens
   [OK] History: 0 past tickets
   [CACHE HIT] Greeting served instantly
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
-  [PREWARM] lineA_m4 — done
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
+  [PREWARM] lineA_m4 â€” done
 
 [INIT] Initialising session: machine=lineA_m5, user=admin
   [OK] User: Admin | lang: en-IN
   [OK] Knowledge: 290 faults | ~4449 tokens
   [OK] History: 0 past tickets
   [CACHE HIT] Greeting served instantly
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
-  [PREWARM] lineA_m5 — done
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
+  [PREWARM] lineA_m5 â€” done
 
 [INIT] Initialising session: machine=lineB_m1, user=admin
   [OK] User: Admin | lang: en-IN
   [OK] Knowledge: 290 faults | ~4449 tokens
   [OK] History: 0 past tickets
   [CACHE HIT] Greeting served instantly
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
-  [PREWARM] lineB_m1 — done
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
+  [PREWARM] lineB_m1 â€” done
 
 [INIT] Initialising session: machine=lineB_m2, user=admin
   [OK] User: Admin | lang: en-IN
   [OK] Knowledge: 290 faults | ~4449 tokens
   [OK] History: 0 past tickets
   [CACHE HIT] Greeting served instantly
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
-  [PREWARM] lineB_m2 — done
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
+  [PREWARM] lineB_m2 â€” done
 
 [INIT] Initialising session: machine=lineB_m3, user=admin
   [OK] User: Admin | lang: en-IN
   [OK] Knowledge: 290 faults | ~4449 tokens
   [OK] History: 0 past tickets
   [CACHE HIT] Greeting served instantly
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
-  [PREWARM] lineB_m3 — done
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
+  [PREWARM] lineB_m3 â€” done
 [PREWARM] All machines ready. Session starts are now instant.
 
 INFO:     127.0.0.1:11331 - "GET /health HTTP/1.1" 200 OK
@@ -82,14 +82,14 @@ INFO:     127.0.0.1:10320 - "POST /auth/login HTTP/1.1" 200 OK
   [OK] Knowledge: 290 faults | ~4449 tokens
   [OK] History: 0 past tickets
   [CACHE HIT] Greeting served instantly
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
 INFO:     127.0.0.1:10322 - "POST /session/start HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 1 | injected: ['F617 — DC link overvoltage', 'F025 — SSI interrupt', 'F026 — SCI interrupt', 'F027 — HOST interrupt', 'F003 — NMI due to watchdog. Suppl. info: \\%X'] | tokens ~5377
+  [RETRIEVER] Turn 1 | injected: ['F617 â€” DC link overvoltage', 'F025 â€” SSI interrupt', 'F026 â€” SCI interrupt', 'F027 â€” HOST interrupt', 'F003 â€” NMI due to watchdog. Suppl. info: \\%X'] | tokens ~5377
 INFO:     127.0.0.1:4691 - "POST /ask HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 2 | injected: ['F617 — DC link overvoltage', 'F616 — DC link undervoltage', 'F149 — Incorrect data for modulo axis with absolute encoder.', 'F875 — Axial deviations in fixed voltage', 'F504 — Measuring circuit error, motor measuring system'] | tokens ~5615
+  [RETRIEVER] Turn 2 | injected: ['F617 â€” DC link overvoltage', 'F616 â€” DC link undervoltage', 'F149 â€” Incorrect data for modulo axis with absolute encoder.', 'F875 â€” Axial deviations in fixed voltage', 'F504 â€” Measuring circuit error, motor measuring system'] | tokens ~5615
 INFO:     127.0.0.1:2294 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:7638 - "GET /health HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 3 | injected: ['F617 — DC link overvoltage', 'F616 — DC link undervoltage', 'F875 — Axial deviations in fixed voltage', 'F504 — Measuring circuit error, motor measuring system', 'F149 — Incorrect data for modulo axis with absolute encoder.'] | tokens ~5671
+  [RETRIEVER] Turn 3 | injected: ['F617 â€” DC link overvoltage', 'F616 â€” DC link undervoltage', 'F875 â€” Axial deviations in fixed voltage', 'F504 â€” Measuring circuit error, motor measuring system', 'F149 â€” Incorrect data for modulo axis with absolute encoder.'] | tokens ~5671
 INFO:     127.0.0.1:9721 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:9718 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:9718 - "GET /machines HTTP/1.1" 200 OK
@@ -109,15 +109,15 @@ INFO:     127.0.0.1:10622 - "GET /machines HTTP/1.1" 200 OK
   [OK] Knowledge: 290 faults | ~4449 tokens
   [OK] History: 2 past tickets
   [CACHE HIT] Greeting served instantly
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
 INFO:     127.0.0.1:10622 - "POST /session/start HTTP/1.1" 200 OK
 INFO:     127.0.0.1:10622 - "GET /health HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 1 | injected: ['F682 — Illegal encoder code number in P\\%u', 'F681 — Illegal power section code number', 'F680 — Illegal motor code number', 'F037 — Error when initializing the user data. Supplementary', 'F039 — Error during power section identification. Supplementary info: \\%X'] | tokens ~5602
+  [RETRIEVER] Turn 1 | injected: ['F682 â€” Illegal encoder code number in P\\%u', 'F681 â€” Illegal power section code number', 'F680 â€” Illegal motor code number', 'F037 â€” Error when initializing the user data. Supplementary', 'F039 â€” Error during power section identification. Supplementary info: \\%X'] | tokens ~5602
 INFO:     127.0.0.1:9552 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:6182 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:6182 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:5673 - "GET /health HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 2 | injected: ['F037 — Error when initializing the user data. Supplementary', 'F680 — Illegal motor code number', 'F682 — Illegal encoder code number in P\\%u', 'F681 — Illegal power section code number', 'F039 — Error during power section identification. Supplementary info: \\%X'] | tokens ~5640
+  [RETRIEVER] Turn 2 | injected: ['F037 â€” Error when initializing the user data. Supplementary', 'F680 â€” Illegal motor code number', 'F682 â€” Illegal encoder code number in P\\%u', 'F681 â€” Illegal power section code number', 'F039 â€” Error during power section identification. Supplementary info: \\%X'] | tokens ~5640
 INFO:     127.0.0.1:3800 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:3722 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:3722 - "GET /health HTTP/1.1" 200 OK
@@ -132,7 +132,7 @@ INFO:     127.0.0.1:12383 - "GET /health HTTP/1.1" 200 OK
   [OK] Knowledge: 290 faults | ~4449 tokens
   [OK] History: 12 past tickets
   [CACHE HIT] Greeting served instantly
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
 INFO:     127.0.0.1:12383 - "POST /session/start HTTP/1.1" 200 OK
   [OK] Ticket saved: lineA_m1 | Closed by operator
 [OK] Session 1776674777 closed and context cleared.
@@ -173,13 +173,13 @@ INFO:     127.0.0.1:9749 - "GET /machines HTTP/1.1" 200 OK
   [OK] Knowledge: 290 faults | ~4449 tokens
   [OK] History: 14 past tickets
   [CACHE HIT] Greeting served instantly
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
 INFO:     127.0.0.1:9749 - "POST /session/start HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 1 | injected: ['F682 — Illegal encoder code number in P\\%u', 'F680 — Illegal motor code number', 'F681 — Illegal power section code number', 'F037 — Error when initializing the user data. Supplementary', 'F750 — Speed monitoring BERO incorrectly configured'] | tokens ~5753
+  [RETRIEVER] Turn 1 | injected: ['F682 â€” Illegal encoder code number in P\\%u', 'F680 â€” Illegal motor code number', 'F681 â€” Illegal power section code number', 'F037 â€” Error when initializing the user data. Supplementary', 'F750 â€” Speed monitoring BERO incorrectly configured'] | tokens ~5753
 INFO:     127.0.0.1:5742 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:5947 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:5947 - "GET /health HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 2 | injected: ['F682 — Illegal encoder code number in P\\%u', 'F680 — Illegal motor code number', 'F681 — Illegal power section code number', 'F037 — Error when initializing the user data. Supplementary', 'F039 — Error during power section identification. Supplementary info: \\%X'] | tokens ~5795
+  [RETRIEVER] Turn 2 | injected: ['F682 â€” Illegal encoder code number in P\\%u', 'F680 â€” Illegal motor code number', 'F681 â€” Illegal power section code number', 'F037 â€” Error when initializing the user data. Supplementary', 'F039 â€” Error during power section identification. Supplementary info: \\%X'] | tokens ~5795
 INFO:     127.0.0.1:5947 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:1941 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:8963 - "GET /health HTTP/1.1" 200 OK
@@ -200,9 +200,9 @@ INFO:     127.0.0.1:1242 - "GET /health HTTP/1.1" 200 OK
   [OK] Knowledge: 290 faults | ~4449 tokens
   [OK] History: 16 past tickets
   [CACHE HIT] Greeting served instantly
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
 INFO:     127.0.0.1:1242 - "POST /session/start HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 1 | injected: ['F608 — Speed controller output limited', 'F037 — Error when initializing the user data. Supplementary', 'F824 — Function generator faulted \\%d', 'F682 — Illegal encoder code number in P\\%u', 'F031 — Internal data error. Suppl. info: \\%X'] | tokens ~5763
+  [RETRIEVER] Turn 1 | injected: ['F608 â€” Speed controller output limited', 'F037 â€” Error when initializing the user data. Supplementary', 'F824 â€” Function generator faulted \\%d', 'F682 â€” Illegal encoder code number in P\\%u', 'F031 â€” Internal data error. Suppl. info: \\%X'] | tokens ~5763
 INFO:     127.0.0.1:9772 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:3605 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:3605 - "GET /health HTTP/1.1" 200 OK
@@ -221,25 +221,25 @@ INFO:     127.0.0.1:9649 - "GET /machines HTTP/1.1" 200 OK
   [OK] Knowledge: 290 faults | ~4449 tokens
   [OK] History: 18 past tickets
   [CACHE HIT] Greeting served instantly
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
 INFO:     127.0.0.1:9649 - "POST /session/start HTTP/1.1" 200 OK
 INFO:     127.0.0.1:9649 - "GET /health HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 1 | injected: ['F037 — Error when initializing the user data. Supplementary', 'F824 — Function generator faulted \\%d', 'F773 — Not permissible to active analog input', 'F865 — Invalid signal number', 'F682 — Illegal encoder code number in P\\%u'] | tokens ~5692
+  [RETRIEVER] Turn 1 | injected: ['F037 â€” Error when initializing the user data. Supplementary', 'F824 â€” Function generator faulted \\%d', 'F773 â€” Not permissible to active analog input', 'F865 â€” Invalid signal number', 'F682 â€” Illegal encoder code number in P\\%u'] | tokens ~5692
 INFO:     127.0.0.1:7537 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:9555 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:7306 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:10068 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:5054 - "GET /health HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 2 | injected: ['F037 — Error when initializing the user data. Supplementary', 'F035 — Error when saving the user data. Supplementary info:', 'F004 — Stack overflow. Suppl. info: \\%X', 'F039 — Error during power section identification. Supplementary info: \\%X', 'F003 — NMI due to watchdog. Suppl. info: \\%X'] | tokens ~5838
+  [RETRIEVER] Turn 2 | injected: ['F037 â€” Error when initializing the user data. Supplementary', 'F035 â€” Error when saving the user data. Supplementary info:', 'F004 â€” Stack overflow. Suppl. info: \\%X', 'F039 â€” Error during power section identification. Supplementary info: \\%X', 'F003 â€” NMI due to watchdog. Suppl. info: \\%X'] | tokens ~5838
 INFO:     127.0.0.1:5054 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:5054 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:7202 - "GET /health HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 3 | injected: ['F037 — Error when initializing the user data. Supplementary', 'F039 — Error during power section identification. Supplementary info: \\%X', 'F035 — Error when saving the user data. Supplementary info:', 'F004 — Stack overflow. Suppl. info: \\%X', 'F007 — Error when initializing. Supplementary info: \\%X'] | tokens ~5965
+  [RETRIEVER] Turn 3 | injected: ['F037 â€” Error when initializing the user data. Supplementary', 'F039 â€” Error during power section identification. Supplementary info: \\%X', 'F035 â€” Error when saving the user data. Supplementary info:', 'F004 â€” Stack overflow. Suppl. info: \\%X', 'F007 â€” Error when initializing. Supplementary info: \\%X'] | tokens ~5965
 INFO:     127.0.0.1:7202 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:6982 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:10468 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:8122 - "GET /health HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 4 | injected: ['F037 — Error when initializing the user data. Supplementary', 'F035 — Error when saving the user data. Supplementary info:', 'F004 — Stack overflow. Suppl. info: \\%X', 'F007 — Error when initializing. Supplementary info: \\%X', 'F039 — Error during power section identification. Supplementary info: \\%X'] | tokens ~6072
+  [RETRIEVER] Turn 4 | injected: ['F037 â€” Error when initializing the user data. Supplementary', 'F035 â€” Error when saving the user data. Supplementary info:', 'F004 â€” Stack overflow. Suppl. info: \\%X', 'F007 â€” Error when initializing. Supplementary info: \\%X', 'F039 â€” Error during power section identification. Supplementary info: \\%X'] | tokens ~6072
 INFO:     127.0.0.1:4054 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:14985 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:14985 - "GET /health HTTP/1.1" 200 OK
@@ -256,23 +256,23 @@ INFO:     127.0.0.1:8488 - "GET /machines HTTP/1.1" 200 OK
   [OK] Knowledge: 290 faults | ~4449 tokens
   [OK] History: 20 past tickets
   [CACHE HIT] Greeting served instantly
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
 INFO:     127.0.0.1:8488 - "POST /session/start HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 1 | injected: ['F680 — Illegal motor code number', 'F731 — Invalid rated output', 'F732 — Invalid rated speed', 'F729 — Invalid motor stall current', 'F780 — No-load current, motor > rated motor current (motor'] | tokens ~5740
+  [RETRIEVER] Turn 1 | injected: ['F680 â€” Illegal motor code number', 'F731 â€” Invalid rated output', 'F732 â€” Invalid rated speed', 'F729 â€” Invalid motor stall current', 'F780 â€” No-load current, motor > rated motor current (motor'] | tokens ~5740
 INFO:     127.0.0.1:8488 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:11846 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:11846 - "GET /health HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 2 | injected: ['F680 — Illegal motor code number', 'F504 — Measuring circuit error, motor measuring system', 'F048 — Illegal status PROFIBUS hardware', 'F511 — Ground fault detected', 'F780 — No-load current, motor > rated motor current (motor'] | tokens ~5797
+  [RETRIEVER] Turn 2 | injected: ['F680 â€” Illegal motor code number', 'F504 â€” Measuring circuit error, motor measuring system', 'F048 â€” Illegal status PROFIBUS hardware', 'F511 â€” Ground fault detected', 'F780 â€” No-load current, motor > rated motor current (motor'] | tokens ~5797
 INFO:     127.0.0.1:1621 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:13127 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:13127 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:13160 - "GET /health HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 3 | injected: ['F504 — Measuring circuit error, motor measuring system', 'F680 — Illegal motor code number', 'F789 — Setpoint transfer SimoCom U ==> drive interrupted', 'F608 — Speed controller output limited', 'F505 — Meas. circ. error motor meas. syst. abs. track'] | tokens ~5979
+  [RETRIEVER] Turn 3 | injected: ['F504 â€” Measuring circuit error, motor measuring system', 'F680 â€” Illegal motor code number', 'F789 â€” Setpoint transfer SimoCom U ==> drive interrupted', 'F608 â€” Speed controller output limited', 'F505 â€” Meas. circ. error motor meas. syst. abs. track'] | tokens ~5979
 INFO:     127.0.0.1:13160 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:14048 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:7005 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:1692 - "GET /health HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 4 | injected: ['F504 — Measuring circuit error, motor measuring system', 'F789 — Setpoint transfer SimoCom U ==> drive interrupted', 'F680 — Illegal motor code number', 'F048 — Illegal status PROFIBUS hardware', 'F608 — Speed controller output limited'] | tokens ~5965
+  [RETRIEVER] Turn 4 | injected: ['F504 â€” Measuring circuit error, motor measuring system', 'F789 â€” Setpoint transfer SimoCom U ==> drive interrupted', 'F680 â€” Illegal motor code number', 'F048 â€” Illegal status PROFIBUS hardware', 'F608 â€” Speed controller output limited'] | tokens ~5965
 INFO:     127.0.0.1:3624 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:5560 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:12999 - "GET /health HTTP/1.1" 200 OK
@@ -324,10 +324,10 @@ INFO:     127.0.0.1:12544 - "GET /health HTTP/1.1" 200 OK
   [OK] Knowledge: 290 faults | ~4449 tokens
   [OK] History: 20 past tickets
   [CACHE HIT] Greeting served instantly
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
 INFO:     127.0.0.1:11100 - "POST /session/start HTTP/1.1" 200 OK
 INFO:     127.0.0.1:7786 - "GET /health HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 1 | injected: ['F682 — Illegal encoder code number in P\\%u', 'F680 — Illegal motor code number', 'F681 — Illegal power section code number', 'F037 — Error when initializing the user data. Supplementary', 'F750 — Speed monitoring BERO incorrectly configured'] | tokens ~5760
+  [RETRIEVER] Turn 1 | injected: ['F682 â€” Illegal encoder code number in P\\%u', 'F680 â€” Illegal motor code number', 'F681 â€” Illegal power section code number', 'F037 â€” Error when initializing the user data. Supplementary', 'F750 â€” Speed monitoring BERO incorrectly configured'] | tokens ~5760
 INFO:     127.0.0.1:2258 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:10353 - "GET /machines HTTP/1.1" 200 OK
 INFO:     127.0.0.1:2258 - "GET /health HTTP/1.1" 200 OK
@@ -361,10 +361,10 @@ INFO:     127.0.0.1:3735 - "GET /health HTTP/1.1" 200 OK
   [OK] Knowledge: 290 faults | ~4449 tokens
   [OK] History: 20 past tickets
   [CACHE HIT] Greeting served instantly
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
 INFO:     127.0.0.1:3735 - "POST /session/start HTTP/1.1" 200 OK
 INFO:     127.0.0.1:11976 - "GET /health HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 1 | injected: ['F037 — Error when initializing the user data. Supplementary', 'F824 — Function generator faulted \\%d', 'F773 — Not permissible to active analog input', 'F865 — Invalid signal number', 'F682 — Illegal encoder code number in P\\%u'] | tokens ~5695
+  [RETRIEVER] Turn 1 | injected: ['F037 â€” Error when initializing the user data. Supplementary', 'F824 â€” Function generator faulted \\%d', 'F773 â€” Not permissible to active analog input', 'F865 â€” Invalid signal number', 'F682 â€” Illegal encoder code number in P\\%u'] | tokens ~5695
 INFO:     127.0.0.1:6997 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:5829 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:3555 - "GET /health HTTP/1.1" 200 OK
@@ -377,14 +377,14 @@ INFO:     127.0.0.1:3569 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:13186 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:2958 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:4114 - "GET /health HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 2 | injected: ['F037 — Error when initializing the user data. Supplementary', 'F035 — Error when saving the user data. Supplementary info:', 'F007 — Error when initializing. Supplementary info: \\%X', 'F036 — Error when downloading the firmware. Suppl. info: \\%X', 'F004 — Stack overflow. Suppl. info: \\%X'] | tokens ~5971
+  [RETRIEVER] Turn 2 | injected: ['F037 â€” Error when initializing the user data. Supplementary', 'F035 â€” Error when saving the user data. Supplementary info:', 'F007 â€” Error when initializing. Supplementary info: \\%X', 'F036 â€” Error when downloading the firmware. Suppl. info: \\%X', 'F004 â€” Stack overflow. Suppl. info: \\%X'] | tokens ~5971
 INFO:     127.0.0.1:7233 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:8212 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:12452 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:7233 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:8212 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:4760 - "GET /health HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 3 | injected: ['F037 — Error when initializing the user data. Supplementary', 'F035 — Error when saving the user data. Supplementary info:', 'F007 — Error when initializing. Supplementary info: \\%X', 'F036 — Error when downloading the firmware. Suppl. info: \\%X', 'F004 — Stack overflow. Suppl. info: \\%X'] | tokens ~6016
+  [RETRIEVER] Turn 3 | injected: ['F037 â€” Error when initializing the user data. Supplementary', 'F035 â€” Error when saving the user data. Supplementary info:', 'F007 â€” Error when initializing. Supplementary info: \\%X', 'F036 â€” Error when downloading the firmware. Suppl. info: \\%X', 'F004 â€” Stack overflow. Suppl. info: \\%X'] | tokens ~6016
 INFO:     127.0.0.1:3976 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:12572 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:5410 - "GET /health HTTP/1.1" 200 OK
@@ -405,10 +405,10 @@ INFO:     127.0.0.1:6589 - "GET /machines HTTP/1.1" 200 OK
   [OK] Knowledge: 290 faults | ~4449 tokens
   [OK] History: 0 past tickets
   [CACHE HIT] Greeting served instantly
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
 INFO:     127.0.0.1:14426 - "POST /session/start HTTP/1.1" 200 OK
 INFO:     127.0.0.1:14426 - "GET /health HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 1 | injected: ['F682 — Illegal encoder code number in P\\%u', 'F680 — Illegal motor code number', 'F037 — Error when initializing the user data. Supplementary', 'F681 — Illegal power section code number', 'F511 — Ground fault detected'] | tokens ~5549
+  [RETRIEVER] Turn 1 | injected: ['F682 â€” Illegal encoder code number in P\\%u', 'F680 â€” Illegal motor code number', 'F037 â€” Error when initializing the user data. Supplementary', 'F681 â€” Illegal power section code number', 'F511 â€” Ground fault detected'] | tokens ~5549
 INFO:     127.0.0.1:9592 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:9592 - "POST /auth/logout HTTP/1.1" 200 OK
 INFO:     127.0.0.1:2155 - "GET /health HTTP/1.1" 200 OK
@@ -437,31 +437,31 @@ INFO:     127.0.0.1:3340 - "GET /machines HTTP/1.1" 200 OK
   [OK] Knowledge: 290 faults | ~4449 tokens
   [OK] History: 20 past tickets
   [CACHE HIT] Greeting served instantly
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
 INFO:     127.0.0.1:12631 - "POST /session/start HTTP/1.1" 200 OK
 INFO:     127.0.0.1:12631 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:3338 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:2558 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:3938 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:3072 - "GET /health HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 1 | injected: ['F039 — Error during power section identification. Supplementary info: \\%X', 'F681 — Illegal power section code number', 'F745 — New EnDat encoder', 'F037 — Error when initializing the user data. Supplementary', 'F004 — Stack overflow. Suppl. info: \\%X'] | tokens ~5717
+  [RETRIEVER] Turn 1 | injected: ['F039 â€” Error during power section identification. Supplementary info: \\%X', 'F681 â€” Illegal power section code number', 'F745 â€” New EnDat encoder', 'F037 â€” Error when initializing the user data. Supplementary', 'F004 â€” Stack overflow. Suppl. info: \\%X'] | tokens ~5717
 INFO:     127.0.0.1:1346 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:11116 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:1346 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:12295 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:5474 - "GET /health HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 2 | injected: ['F039 — Error during power section identification. Supplementary info: \\%X', 'F037 — Error when initializing the user data. Supplementary', 'F034 — Axis count function has failed', 'F004 — Stack overflow. Suppl. info: \\%X', 'F781 — No-load current, motor \\%d > rated power section current'] | tokens ~5854
+  [RETRIEVER] Turn 2 | injected: ['F039 â€” Error during power section identification. Supplementary info: \\%X', 'F037 â€” Error when initializing the user data. Supplementary', 'F034 â€” Axis count function has failed', 'F004 â€” Stack overflow. Suppl. info: \\%X', 'F781 â€” No-load current, motor \\%d > rated power section current'] | tokens ~5854
 INFO:     127.0.0.1:5474 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:10317 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:1617 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:9249 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:1679 - "GET /health HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 3 | injected: ['F039 — Error during power section identification. Supplementary info: \\%X', 'F815 — Power module temperature, pre-alarm', 'F037 — Error when initializing the user data. Supplementary', 'F034 — Axis count function has failed', 'F004 — Stack overflow. Suppl. info: \\%X'] | tokens ~5964
+  [RETRIEVER] Turn 3 | injected: ['F039 â€” Error during power section identification. Supplementary info: \\%X', 'F815 â€” Power module temperature, pre-alarm', 'F037 â€” Error when initializing the user data. Supplementary', 'F034 â€” Axis count function has failed', 'F004 â€” Stack overflow. Suppl. info: \\%X'] | tokens ~5964
 INFO:     127.0.0.1:1679 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:2658 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:4435 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:11760 - "GET /health HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 4 | injected: ['F039 — Error during power section identification. Supplementary info: \\%X', 'F034 — Axis count function has failed', 'F815 — Power module temperature, pre-alarm', 'F028 — Actual current sensing during power-up', 'F515 — Power module temperature, exceeded'] | tokens ~6065
+  [RETRIEVER] Turn 4 | injected: ['F039 â€” Error during power section identification. Supplementary info: \\%X', 'F034 â€” Axis count function has failed', 'F815 â€” Power module temperature, pre-alarm', 'F028 â€” Actual current sensing during power-up', 'F515 â€” Power module temperature, exceeded'] | tokens ~6065
 INFO:     127.0.0.1:11760 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:2220 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:14348 - "GET /health HTTP/1.1" 200 OK
@@ -469,7 +469,7 @@ INFO:     127.0.0.1:2887 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:13753 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:6156 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:12147 - "GET /health HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 5 | injected: ['F815 — Power module temperature, pre-alarm', 'F039 — Error during power section identification. Supplementary info: \\%X', 'F034 — Axis count function has failed', 'F028 — Actual current sensing during power-up', 'F515 — Power module temperature, exceeded'] | tokens ~6155
+  [RETRIEVER] Turn 5 | injected: ['F815 â€” Power module temperature, pre-alarm', 'F039 â€” Error during power section identification. Supplementary info: \\%X', 'F034 â€” Axis count function has failed', 'F028 â€” Actual current sensing during power-up', 'F515 â€” Power module temperature, exceeded'] | tokens ~6155
   [OK] Ticket saved: lineA_m1 | Resolved by operator
 [OK] Session 1776678513 closed and context cleared.
 INFO:     127.0.0.1:12147 - "POST /ask HTTP/1.1" 200 OK
@@ -509,9 +509,9 @@ INFO:     127.0.0.1:13553 - "GET /sw.js HTTP/1.1" 304 Not Modified
   [OK] Knowledge: 290 faults | ~4449 tokens
   [OK] History: 20 past tickets
   [CACHE HIT] Greeting served instantly
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
 INFO:     127.0.0.1:13553 - "POST /session/start HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 1 | injected: ['F682 — Illegal encoder code number in P\\%u', 'F680 — Illegal motor code number', 'F681 — Illegal power section code number', 'F037 — Error when initializing the user data. Supplementary', 'F750 — Speed monitoring BERO incorrectly configured'] | tokens ~5761
+  [RETRIEVER] Turn 1 | injected: ['F682 â€” Illegal encoder code number in P\\%u', 'F680 â€” Illegal motor code number', 'F681 â€” Illegal power section code number', 'F037 â€” Error when initializing the user data. Supplementary', 'F750 â€” Speed monitoring BERO incorrectly configured'] | tokens ~5761
 INFO:     127.0.0.1:7404 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:7182 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:7404 - "GET /health HTTP/1.1" 200 OK
@@ -521,7 +521,7 @@ INFO:     127.0.0.1:8822 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:5418 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:6379 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:10367 - "GET /health HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 2 | injected: ['F682 — Illegal encoder code number in P\\%u', 'F681 — Illegal power section code number', 'F680 — Illegal motor code number', 'F037 — Error when initializing the user data. Supplementary', 'F039 — Error during power section identification. Supplementary info: \\%X'] | tokens ~5805
+  [RETRIEVER] Turn 2 | injected: ['F682 â€” Illegal encoder code number in P\\%u', 'F681 â€” Illegal power section code number', 'F680 â€” Illegal motor code number', 'F037 â€” Error when initializing the user data. Supplementary', 'F039 â€” Error during power section identification. Supplementary info: \\%X'] | tokens ~5805
 INFO:     127.0.0.1:9239 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:5934 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:9239 - "GET /health HTTP/1.1" 200 OK
@@ -558,7 +558,7 @@ INFO:     127.0.0.1:9627 - "GET /health HTTP/1.1" 200 OK
   [OK] Knowledge: 290 faults | ~4449 tokens
   [OK] History: 20 past tickets
   [CACHE HIT] Greeting served instantly
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
 INFO:     127.0.0.1:9627 - "POST /session/start HTTP/1.1" 200 OK
 INFO:     127.0.0.1:1656 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:8544 - "GET /health HTTP/1.1" 200 OK
@@ -567,7 +567,7 @@ INFO:     127.0.0.1:9798 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:3419 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:11355 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:11355 - "GET /health HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 1 | injected: ['F037 — Error when initializing the user data. Supplementary', 'F824 — Function generator faulted \\%d', 'F773 — Not permissible to active analog input', 'F865 — Invalid signal number', 'F682 — Illegal encoder code number in P\\%u'] | tokens ~5694
+  [RETRIEVER] Turn 1 | injected: ['F037 â€” Error when initializing the user data. Supplementary', 'F824 â€” Function generator faulted \\%d', 'F773 â€” Not permissible to active analog input', 'F865 â€” Invalid signal number', 'F682 â€” Illegal encoder code number in P\\%u'] | tokens ~5694
 INFO:     127.0.0.1:14416 - "POST /ask HTTP/1.1" 200 OK
   [OK] Ticket saved: lineA_m1 | Closed by operator
 [OK] Session 1776681010 closed and context cleared.
@@ -597,10 +597,10 @@ INFO:     127.0.0.1:3922 - "GET /health HTTP/1.1" 200 OK
   [OK] Knowledge: 290 faults | ~4449 tokens
   [OK] History: 20 past tickets
   [CACHE HIT] Greeting served instantly
-  [OK] Agent ready: Please describe the fault code or symptoms you see.…
+  [OK] Agent ready: Please describe the fault code or symptoms you see.â€¦
 INFO:     127.0.0.1:3922 - "POST /session/start HTTP/1.1" 200 OK
 INFO:     127.0.0.1:2293 - "GET /health HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 1 | injected: ['F611 — Illegal motion during rotor position identification', 'F682 — Illegal encoder code number in P\\%u', 'F680 — Illegal motor code number', 'F681 — Illegal power section code number', 'F037 — Error when initializing the user data. Supplementary'] | tokens ~5795
+  [RETRIEVER] Turn 1 | injected: ['F611 â€” Illegal motion during rotor position identification', 'F682 â€” Illegal encoder code number in P\\%u', 'F680 â€” Illegal motor code number', 'F681 â€” Illegal power section code number', 'F037 â€” Error when initializing the user data. Supplementary'] | tokens ~5795
 INFO:     127.0.0.1:2293 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:10591 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:1549 - "GET /health HTTP/1.1" 200 OK
@@ -608,7 +608,7 @@ INFO:     127.0.0.1:2293 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:1549 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:8368 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:4913 - "GET /health HTTP/1.1" 200 OK
-  [RETRIEVER] Turn 2 | injected: ['F611 — Illegal motion during rotor position identification', 'F780 — No-load current, motor > rated motor current (motor', 'F680 — Illegal motor code number', 'F682 — Illegal encoder code number in P\\%u', 'F781 — No-load current, motor \\%d > rated power section current'] | tokens ~5875
+  [RETRIEVER] Turn 2 | injected: ['F611 â€” Illegal motion during rotor position identification', 'F780 â€” No-load current, motor > rated motor current (motor', 'F680 â€” Illegal motor code number', 'F682 â€” Illegal encoder code number in P\\%u', 'F781 â€” No-load current, motor \\%d > rated power section current'] | tokens ~5875
 INFO:     127.0.0.1:4913 - "POST /ask HTTP/1.1" 200 OK
 INFO:     127.0.0.1:7972 - "GET /machines HTTP/1.1" 200 OK
 INFO:     127.0.0.1:1708 - "GET /sw.js HTTP/1.1" 304 Not Modified
