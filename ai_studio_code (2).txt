@@ -1,0 +1,25 @@
+# --- Web Server & API ---
+fastapi==0.110.1
+uvicorn[standard]==0.29.0
+python-multipart==0.0.9
+websockets==12.0
+
+# --- LLM & External API Clients ---
+requests==2.31.0
+httpx==0.27.0
+python-dotenv==1.0.1
+
+# --- Data Processing (Excel) ---
+pandas==2.2.1
+openpyxl==3.1.2
+
+# --- PDF & Document Indexing ---
+pdfplumber==0.11.0
+pageindex==0.0.5
+
+# --- Vector Database & Embeddings ---
+faiss-cpu==1.8.0
+sentence-transformers==2.6.1
+
+# --- Audio Processing ---
+pydub==0.25.1
